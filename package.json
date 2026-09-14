@@ -1,0 +1,16 @@
+{
+  "name": "financia-capital-web",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Maqueta HTML/CSS del sitio web de Financia Capital",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "test:report": "playwright show-report",
+    "serve": "node scripts/serve.js"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.47.0"
+  }
+}
