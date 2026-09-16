@@ -206,7 +206,7 @@
             <a class="nav-link me-lg-2 active" href="#">Somos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link me-lg-2" href="novedades.html">Novedades</a>
+            <a class="nav-link me-lg-2" href="novedades.html">Blog</a>
           </li>
           <li class="nav-item">
             <a class="nav-link me-lg-2" href="simular.html">Simular</a>
@@ -427,16 +427,16 @@ Asimismo, buscamos simplificar los procesos financieros mediante herramientas di
               <li><a href="quienes-somos.html">Quienes Somos</a></li>
               <li><a href="factoring.html">Factoring</a></li>
               <li><a href="simular.html">Simmulador</a></li>
-              <li><a href="novedades.html">Novedades</a></li>
+              <li><a href="novedades.html">Blog</a></li>
             </ul>
           </div>
           <div class="col-12 col-lg-3 order-1 order-lg-2 text-center text-lg-end menu-ft">
             <h5>transparencia <br><img src="imagenes/Rectangle.png" class="img-fluid mb-3" alt=""></h5>
             <ul>
               <li><a href="#">Canal Ético</a></li>
-              <li><a href="#">Como Ceder tus Facturas</a></li>
+              <li><a href="ayuda-detalle.html">Como Ceder tus Facturas</a></li>
               <li><a href="politicas-privacidad.html">Políticas de Privacidad</a></li>
-              <li><a href="#">Canal de Denuncias</a></li>
+              <li><a href="canal-denuncias.html">Canal de Denuncias</a></li>
               <li><a href="centro-ayuda.html">Centro de Ayuda</a></li>
             </ul>
           </div>
@@ -609,6 +609,38 @@ Asimismo, buscamos simplificar los procesos financieros mediante herramientas di
           els.forEach(function (el) { io.observe(el); });
         } catch (e) {
           document.documentElement.classList.replace('js', 'no-js');
+        }
+      })();
+
+      (function () {
+        var img = document.querySelector('.proposito-visual img');
+        var cards = document.querySelectorAll('.proposito-card');
+        if (!img || cards.length < 2) return;
+        var mql = window.matchMedia('(min-width: 768px) and (max-width: 1024px)');
+
+        function syncHeight() {
+          if (!mql.matches) {
+            img.style.height = '';
+            return;
+          }
+          img.style.height = 'auto';
+          var maxHeight = Math.max.apply(null, Array.prototype.map.call(cards, function (card) {
+            return card.offsetHeight;
+          }));
+          img.style.height = maxHeight + 'px';
+        }
+
+        syncHeight();
+        window.addEventListener('load', syncHeight);
+        window.addEventListener('resize', syncHeight);
+        if (mql.addEventListener) {
+          mql.addEventListener('change', syncHeight);
+        } else if (mql.addListener) {
+          mql.addListener(syncHeight);
+        }
+        if ('ResizeObserver' in window) {
+          var ro = new ResizeObserver(syncHeight);
+          Array.prototype.forEach.call(cards, function (card) { ro.observe(card); });
         }
       })();
     </script>

@@ -11,6 +11,9 @@ body.modal-open {
   font-optical-sizing: auto;
   font-style: normal;
 }
+h4 {
+  font-weight: 400;
+}
 p {
   font-family: "Inter", Arial, Helvetica, sans-serif;
 }
@@ -53,7 +56,7 @@ p {
   color: #5E5E5E;
 }
 .title-text {
-  font-size: 4em;
+  font-size: 2em;
   font-weight: 700;
   line-height: 1.2em;
   color: #ffffff;
@@ -64,7 +67,7 @@ p {
   color: #ffff;
 }
 .frase-action {
-  font-size: 2.5em;
+  font-size: 2em;
   font-weight: 620;
   line-height: 1em;
   text-align: center;
@@ -85,6 +88,16 @@ p {
 }
 .hero-content--somos .box-text {
   margin-top: 50px;
+}
+@media (max-width: 767.98px) {
+  .hero-content--simular {
+    margin-top: 35px;
+  }
+}
+@media (max-width: 767.98px) {
+  .navbar-brand img.d-lg-none {
+    width: 120px;
+  }
 }
 .navbar-toggler-icon {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255,255,255,1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
@@ -232,6 +245,12 @@ p {
   z-index: 14;
   top: 50%;
 }
+@media (max-width: 767.98px) {
+  .como-funciona {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
 .bullets li {
   background-color: #10172990;
   border-radius: 5px;
@@ -274,9 +293,6 @@ p {
 .btn-action-2:hover {
   background-color: #bf3f04;
   transition: 0.15s;
-}
-.navbar {
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 4px 20px 0 rgba(0, 0, 0, 0.15)
 }
 /*Formulario*/
 .form-financia {
@@ -435,12 +451,12 @@ p {
 }
 /*Quienes Somos*/
 .somos-fc h1{
-  font-weight: 700;
-  font-size: 3em;
+  font-weight: 620;
+  font-size: 2em;
+  line-height: 1em;
 }
 .somos-fc p{
   font-family: "Inter", Arial, Helvetica, sans-serif;
-  font-size: 1.3em;
 }
 .timeline-box {
   height: 200px;
@@ -452,7 +468,7 @@ p {
     max-width: 540px;
   }
   .title-text {
-    font-size: 2.4em;
+    font-size: 2em;
     text-align: center;
     /*text-shadow: 0 0 8px rgb(230, 237, 243);*/
   }
@@ -561,7 +577,7 @@ p {
 }
 @media (min-width: 450px) {
   .title-text {
-    font-size: 2.5em;
+    font-size: 2em;
     text-align: left;
   }
   .box-text {
@@ -614,7 +630,7 @@ p {
     max-height:600px;
   }
   .title-text {
-    font-size: 2.5em;
+    font-size: 2em;
     text-align: left;
   }
   .box-text {
@@ -634,7 +650,7 @@ p {
     font-size: .9em;
   }
   .frase-action {
-    font-size: 2.2em;
+    font-size: 2em;
   }
   .box-form-movil {
     margin-top: 280px;
@@ -650,12 +666,12 @@ p {
 }
 @media (min-width: 645px) {
   .frase-action {
-    font-size: 2.5em;
+    font-size: 2em;
   }
 }
 @media (min-width: 650px) {
   .title-text {
-    font-size: 2.5em;
+    font-size: 2em;
   }
   .box-text {
     margin-top: 35px;
@@ -1009,6 +1025,22 @@ p {
 .ayuda-detalle-article {
   padding-top: calc(clamp(2.5rem, 2rem + 2vw, 4rem) + 40px);
 }
+.canal-denuncias-hero {
+  padding-top: calc(clamp(2.5rem, 2rem + 2vw, 4rem) + 8px);
+}
+.canal-denuncias-frame {
+  width: 100%;
+  height: 80vh;
+  min-height: 600px;
+  border-top: 1px solid #E9ECEF;
+  border-bottom: 1px solid #E9ECEF;
+}
+.canal-denuncias-frame iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
 .blog-filters {
   display: flex;
   flex-wrap: wrap;
@@ -1016,8 +1048,8 @@ p {
   margin-bottom: clamp(1.5rem, 1rem + 2vw, 2.5rem);
 }
 .blog-filters .filtro-pill {
-  border: 2px solid #19233E;
-  color: #19233E;
+  border: 2px solid #E9540D;
+  color: #E9540D;
   background-color: transparent;
   border-radius: 40px;
   padding: 6px 18px;
@@ -1028,7 +1060,7 @@ p {
 }
 .blog-filters .filtro-pill.active,
 .blog-filters .filtro-pill:hover {
-  background-color: #19233E;
+  background-color: #E9540D;
   color: #fff;
 }
 .blog-grid {
@@ -1271,6 +1303,9 @@ p {
   color: rgba(255, 255, 255, 0.6);
   margin: 1.25rem 0 0;
 }
+.timeline-mobile {
+  margin-top: 30px;
+}
 .timeline-mobile__col-img {
   display: flex;
   justify-content: center;
@@ -1308,13 +1343,48 @@ p {
   justify-content: center;
 }
 .proposito-visual img {
-  border-radius: 20px;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 0;
   position: relative;
   z-index: 2;
 }
-@media (min-width: 992px) {
+@media (max-width: 767.98px) {
+  .proposito-visual {
+    width: 100vw;
+    max-width: 100vw;
+    margin-left: calc(50% - 50vw);
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .proposito-row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .proposito-visual {
+    order: -1;
+    width: 100%;
+    max-width: 100%;
+    flex: 0 0 100%;
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 0;
+  }
   .proposito-visual img {
-    transform: scale(1.12);
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 0;
+    transform: none;
+  }
+  .proposito-card {
+    width: 50%;
+    max-width: 50%;
+    flex: 0 0 50%;
   }
 }
 .galeria-grid {
@@ -1534,9 +1604,23 @@ p {
 }
 .simulador-field label {
   display: block;
-  font-weight: 650;
+  font-weight: 450;
   color: #19233E;
   margin-bottom: 0.6rem;
+}
+.simulador-field__hint {
+  display: block;
+  font-size: 0.8rem;
+  color: #5E5E5E;
+  margin-top: 0.5rem;
+}
+.simulador-input:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+.simulador-dias button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
 }
 .simulador-input {
   width: 100%;
