@@ -157,6 +157,12 @@ p {
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
+@media (max-width: 767.98px) {
+  /* Home móvil: se sube 1px bajo el navbar para evitar un filete blanco por redondeo de subpíxeles. */
+  .box-banner--home {
+    top: 59px;
+  }
+}
 .box-banner picture,
 .box-banner img {
   
