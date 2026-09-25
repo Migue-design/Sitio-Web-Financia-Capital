@@ -1,0 +1,7 @@
+<svg width="74" height="74" viewBox="0 0 74 74" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs><filter id="s-e" x="0" y="0" width="74" height="74" filterUnits="userSpaceOnUse"><feDropShadow dx="0" dy="8" stdDeviation="5" flood-color="#083368" flood-opacity="0.3"/></filter></defs>
+<rect x="12" y="2" width="50" height="50" rx="12" fill="#083368" filter="url(#s-e)"/>
+<g transform="translate(24 14) scale(1.083)" stroke="#FFFFFF" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+<path d="M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5Zm0 0a9 9 0 1 1 18 0m0 0v5a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3Z"/><path d="M21 16v2a4 4 0 0 1-4 4h-5"/>
+</g>
+</svg>

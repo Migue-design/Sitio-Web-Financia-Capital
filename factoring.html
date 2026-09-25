@@ -45,7 +45,7 @@
       "telephone": "+56-9-9797-4079",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Manquehue Norte 160, oficina 141",
+        "streetAddress": "Manquehue Norte 160, piso 14",
         "addressLocality": "Las Condes",
         "addressRegion": "Región Metropolitana",
         "addressCountry": "CL"
@@ -198,7 +198,7 @@
         <button type="button" class="modal-hazte-cliente__close offcanvas-close" data-bs-dismiss="offcanvas" data-bs-target="#navbarSupportedContent" aria-label="Close">&times;</button>
       </div>
       <div class="offcanvas-body">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <ul class="navbar-nav navbar-nav-principal ms-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <a class="nav-link me-lg-2 active" href="factoring.html">Factoring</a>
           </li>
@@ -206,7 +206,7 @@
             <a class="nav-link me-lg-2" href="quienes-somos.html">Quiénes Somos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link me-lg-2" href="novedades.html">Blog</a>
+            <a class="nav-link me-lg-2" href="blog.html">Blog</a>
           </li>
           <li class="nav-item">
             <a class="nav-link me-lg-2" href="simular.html">Simular</a>
@@ -214,16 +214,16 @@
           <li class="nav-item">
             <a class="nav-link me-lg-2" href="centro-ayuda.html">Ayuda</a>
           </li>
-          <li class="nav-item me-sm-0 me-lg-2">
-            <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#modalHazteCliente">Hazte Cliente</a>
+          <li class="nav-item nav-item-cta me-sm-0 me-lg-2">
+            <a class="nav-link nav-cta-cliente" href="#" data-bs-toggle="modal" data-bs-target="#modalHazteCliente">Hazte Cliente</a>
           </li>
           <li class="nav-item mt-4 mt-sm-4 mt-lg-0">
-              <a class="btn-action mt-0"
-                data-evento="whatsapp-header"
+              <a class="btn-action btn-ingresar mt-0"
+                data-evento="ingresar-header"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Habla con un ejecutivo por WhatsApp"
-                href="https://wa.me/56997974079?text=Hola%20Financia%20Capital%2C%20estoy%20interesado%20en%20sus%20servicios%20de%20factoring%20y%20quisiera%20recibir%20asesor%C3%ADa%20o%20agendar%20una%20reuni%C3%B3n"
+                aria-label="Ingresar a la plataforma de clientes"
+                href="https://clientes.financiatec.cl/login"
               > Ingresar
               </a>
           </li>
@@ -367,7 +367,7 @@
               <li><img src="imagenes/check.svg" class="img-fluid mb-2 me-2" alt="" aria-hidden="true" loading="lazy" decoding="async">Factura No Afecta o Exenta Electrónica (DTE tipo 34).</li>
             </ul>
             <p class="text-blanco">Ambas cuentan con copia cedible, que es el documento que permite transferir el derecho de cobro conforme a la Ley 19.983 y registrar la cesión en el SII.</p>
-            <a class="btn-action-2 text-center mt-lg-5" data-evento="whatsapp-requisitos" target="_blank" rel="noopener noreferrer" href="https://wa.me/56997974079?text=Hola%20Financia%20Capital%2C%20estoy%20interesado%20en%20sus%20servicios%20de%20factoring%20y%20quisiera%20recibir%20asesor%C3%ADa%20o%20agendar%20una%20reuni%C3%B3n">Habla con un ejecutivo</a>
+            <a class="btn-action-2 text-center mt-lg-5" data-evento="whatsapp-requisitos" target="_blank" rel="noopener noreferrer" href="https://wa.me/56997974079?text=Hola%2C%20quiero%20cotizar%20una%20operaci%C3%B3n%20de%20factoring">Habla con un ejecutivo</a>
           </div>
         </div>
       </div>
@@ -460,32 +460,33 @@
               <img src="imagenes/logo-corfo.png" width="100" class="img-fluid footer-cmf-corfo" alt="Logo de Corfo, Corporación de Fomento de la Producción" loading="lazy" decoding="async">
             </div>
           </div>
-          <div class="col-12 col-lg-3 order-1 order-lg-2 text-center text-lg-end menu-ft">
+          <div class="col-12 col-lg-3 order-1 order-lg-2 text-center text-lg-start menu-ft">
             <h5>Conocenos <br><img src="imagenes/Rectangle.png" class="img-fluid mb-3" alt=""></h5>
             <ul>
               <li><a href="quienes-somos.html">Quienes Somos</a></li>
               <li><a href="factoring.html">Factoring</a></li>
               <li><a href="simular.html">Simmulador</a></li>
-              <li><a href="novedades.html">Blog</a></li>
+              <li><a href="blog.html">Blog</a></li>
             </ul>
           </div>
-          <div class="col-12 col-lg-3 order-1 order-lg-2 text-center text-lg-end menu-ft">
+          <div class="col-12 col-lg-3 order-1 order-lg-2 text-center text-lg-start menu-ft">
             <h5>Informaciones <br><img src="imagenes/Rectangle.png" class="img-fluid mb-3" alt=""></h5>
             <ul>
               <li><a href="como-factorizar-paso-a-paso.html">Como Ceder tus Facturas</a></li>
               <li><a href="politicas-privacidad.html">Políticas de Privacidad</a></li>
               <li><a href="canal-denuncias.html">Canal de Denuncias</a></li>
               <li><a href="centro-ayuda.html">Centro de Ayuda</a></li>
+              <li><a href="#" data-bs-toggle="modal" data-bs-target="#modalHazteCliente" data-evento="footer-hazte-cliente">Hazte Cliente</a></li>
             </ul>
           </div>
-          <div class="col-12 col-lg-3 order-1 order-lg-2 text-center text-lg-end menu-ft">
+          <div class="col-12 col-lg-3 order-1 order-lg-2 text-center text-lg-start menu-ft">
             <h5>Canales de atención <br><img src="imagenes/Rectangle.png" class="img-fluid" alt=""></h5>
             <a href="tel:+56225846100">+56 2 2584 6100</a><br>
-            <a href="tel:+56997974079">+56 9 9797 4079</a><br>
+            <a href="https://wa.me/56997974079?text=Hola%2C%20quiero%20hablar%20con%20un%20ejecutivo" target="_blank" rel="noopener noreferrer" data-evento="whatsapp-footer" aria-label="Escribir por WhatsApp al +56 9 9797 4079">+56 9 9797 4079</a><br>
             <a href="mailto:contacto@financiacapital.cl">contacto@financiacapital.cl</a>
-            <p>Lunes a viernes de 9:00 a 5:30</p>
-            <h5>Contactanos<br><img src="imagenes/Rectangle.png" class="img-fluid" alt=""></h5>
-            <p>Grupo Financia Capital<br>Manquehue Norte 160, piso 14, Las Condes.</p>
+            <p>Lunes a viernes de 9:00 a 17:30</p>
+            <h5>Oficina<br><img src="imagenes/Rectangle.png" class="img-fluid" alt=""></h5>
+            <p>Financia Capital<br>Manquehue Norte 160, piso 14, Las Condes.</p>
           </div>
         </div>
       </div>

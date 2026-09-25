@@ -1,0 +1,7 @@
+<svg width="74" height="74" viewBox="0 0 74 74" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs><filter id="s-r" x="0" y="0" width="74" height="74" filterUnits="userSpaceOnUse"><feDropShadow dx="0" dy="8" stdDeviation="5" flood-color="#FC5F00" flood-opacity="0.3"/></filter></defs>
+<rect x="12" y="2" width="50" height="50" rx="12" fill="#FC5F00" filter="url(#s-r)"/>
+<g transform="translate(24 14) scale(1.083)" stroke="#FFFFFF" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+<line x1="10" x2="14" y1="2" y2="2"/><line x1="12" x2="15" y1="14" y2="11"/><circle cx="12" cy="14" r="8"/>
+</g>
+</svg>
