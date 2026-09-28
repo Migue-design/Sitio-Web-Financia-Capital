@@ -2446,8 +2446,17 @@ p {
     padding-right: 10px;
   }
 }
-/* Preguntas frecuentes de las vistas de detalle: pregunta más grande. */
-.ayuda-detalle-contenido .accordion-button {
+/* Preguntas frecuentes del Centro de ayuda y de los detalles de ayuda y blog:
+   pregunta a 1.2em del texto base (el h3 se normaliza a 1rem para que el em
+   no herede su tamaño de título). */
+.ayuda-faq-section .accordion-header,
+.ayuda-detalle-article .accordion-header,
+.blog-detalle-article .accordion-header {
+  font-size: 1rem;
+}
+.ayuda-faq-section .accordion-button,
+.ayuda-detalle-article .accordion-button,
+.blog-detalle-article .accordion-button {
   font-size: 1.2em;
 }
 /* En estas vistas el texto ocupa todo el ancho de la caja. */
@@ -2690,4 +2699,420 @@ p {
 .link-conocer-mas:hover {
   color: #bf3f04;
   text-decoration: underline;
+}
+
+/*Contacto*/
+.contacto-section {
+  padding-bottom: clamp(2.5rem, 2rem + 2vw, 4rem);
+}
+.contacto-intro {
+  max-width: 42em;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 0;
+}
+.btn-action-2.contacto-whatsapp {
+  width: 100%;
+  max-width: 320px;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.contacto-card,
+.contacto-form-card {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.contacto-form-card {
+  padding: clamp(1.5rem, 1rem + 2vw, 2.5rem);
+  margin-bottom: 0;
+}
+.contacto-card__title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #19233E;
+  margin-bottom: 1rem;
+}
+.contacto-datos {
+  display: grid;
+  grid-template-columns: minmax(7.5rem, auto) 1fr;
+  gap: 0.6rem 1rem;
+  margin: 0;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 0.95rem;
+}
+.contacto-datos dt {
+  font-weight: 600;
+  color: #19233E;
+}
+.contacto-datos dd {
+  margin: 0;
+  color: #333;
+  overflow-wrap: anywhere;
+}
+.contacto-datos a,
+.contacto-deudores a,
+.contacto-consentimiento a {
+  color: #E9540D;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.contacto-datos a:hover,
+.contacto-deudores a:hover,
+.contacto-consentimiento a:hover {
+  color: #bf3f04;
+}
+.contacto-deudores {
+  border-left: 4px solid #E9540D;
+  background-color: #EBF2FF;
+  padding: 1rem 1.25rem;
+  border-radius: 0 15px 15px 0;
+  font-size: 0.95rem;
+  color: #19233E;
+  margin-bottom: 0;
+}
+.contacto-label {
+  display: block;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #19233E;
+  margin-bottom: 0.35rem;
+}
+.contacto-input {
+  display: block;
+  width: 100%;
+  border: 1px solid #CED4DA;
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 0.95rem;
+  color: #19233E;
+  background-color: #fff;
+}
+.contacto-input:focus {
+  outline: none;
+  border-color: #E9540D;
+  box-shadow: 0 0 0 3px rgba(233, 84, 13, 0.2);
+}
+.was-validated .contacto-input:invalid {
+  border-color: #dc3545;
+}
+.contacto-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+.contacto-consentimiento {
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 0.85rem;
+  color: #333;
+}
+.contacto-consentimiento .form-check-input:checked {
+  background-color: #E9540D;
+  border-color: #E9540D;
+}
+.contacto-feedback {
+  font-size: 0.9rem;
+  padding: 0.6rem 0.9rem;
+  border-radius: 8px;
+}
+.contacto-submit {
+  width: 100%;
+  border: none;
+  border-radius: 40px;
+  background-color: #E9540D;
+  color: #fff;
+  font-weight: 700;
+  padding: 0.85rem;
+  font-size: 1.05rem;
+  transition: 0.15s;
+}
+.contacto-submit:hover {
+  background-color: #bf3f04;
+}
+/* Mapa full-width: fuera del .container para ocupar todo el ancho del viewport */
+.contacto-mapa {
+  width: 100%;
+  height: clamp(320px, 45vw, 480px);
+  line-height: 0;
+}
+.contacto-mapa iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+@media (max-width: 575.98px) {
+  .contacto-datos {
+    grid-template-columns: 1fr;
+    gap: 0.1rem;
+  }
+  .contacto-datos dd {
+    margin-bottom: 0.6rem;
+  }
+  .btn-action-2.contacto-whatsapp {
+    max-width: none;
+  }
+}
+/* Contacto: íconos de los canales de atención (círculo naranjo, ícono blanco) */
+.contacto-datos--iconos {
+  grid-template-columns: minmax(10rem, auto) 1fr;
+  row-gap: 0.85rem;
+  align-items: center;
+}
+.contacto-datos--iconos dt {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.contacto-icono {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background-color: #E9540D;
+  color: #fff;
+}
+.contacto-icono svg {
+  width: 0.67rem;
+  height: 0.67rem;
+}
+@media (max-width: 575.98px) {
+  .contacto-datos--iconos {
+    grid-template-columns: 1fr;
+    row-gap: 0.1rem;
+  }
+  .contacto-datos--iconos dd {
+    padding-left: 2.25rem; /* alinea el valor con el texto, a la derecha del ícono */
+  }
+}
+
+/* Modal Hazte cliente: formulario "Regístrate" de 8 campos + pasos siguientes */
+.modal-hazte-cliente .modal-dialog {
+  max-width: 640px;
+}
+.modal-hazte-cliente .modal-content {
+  max-height: 90vh;
+}
+@media (max-width: 575.98px) {
+  .modal-hazte-cliente .modal-content {
+    max-height: 100%;
+  }
+  /* El contenido es más alto que la pantalla: centrarlo cortaría el inicio. */
+  .modal-hazte-cliente .modal-body {
+    justify-content: flex-start;
+  }
+}
+.modal-hazte-cliente__form-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+.modal-hazte-cliente__label {
+  display: block;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 0.3rem;
+}
+select.modal-hazte-cliente__input {
+  padding-right: 2.5rem;
+  background-position: right 1rem center;
+}
+select.modal-hazte-cliente__input:disabled {
+  background-color: #E0E5ED;
+  color: #5E5E5E;
+  cursor: not-allowed;
+}
+.modal-hazte-cliente__input[aria-invalid="true"] {
+  border-color: #FF8A8A;
+  box-shadow: 0 0 0 2px rgba(255, 138, 138, 0.35);
+}
+.modal-hazte-cliente__error {
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 0.78rem;
+  color: #FFB3B3;
+  margin: 0.3rem 0 0;
+}
+.modal-hazte-cliente__error:empty {
+  display: none;
+}
+.modal-hazte-cliente__check {
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 0.5rem;
+}
+.modal-hazte-cliente__check .form-check-input {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+.modal-hazte-cliente__check .form-check-input:checked {
+  background-color: #E9540D;
+  border-color: #E9540D;
+}
+.modal-hazte-cliente__check .form-check-input[aria-invalid="true"] {
+  border-color: #FF8A8A;
+}
+.modal-hazte-cliente__check a {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.modal-hazte-cliente__check a:hover {
+  color: #E9540D;
+}
+#hazte-cliente-form .modal-hazte-cliente__feedback {
+  margin: 1rem 0 0;
+}
+#hazte-cliente-form .modal-hazte-cliente__submit {
+  margin-top: 1.25rem;
+  border-radius: 40px;
+}
+.modal-hazte-cliente__pasos {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+.modal-hazte-cliente__pasos ol {
+  list-style: none;
+  counter-reset: paso;
+  padding: 0;
+  margin: 0;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.8);
+}
+.modal-hazte-cliente__pasos li {
+  counter-increment: paso;
+  position: relative;
+  padding-left: 2.25rem;
+  margin-bottom: 0.85rem;
+}
+.modal-hazte-cliente__pasos li:last-child {
+  margin-bottom: 0;
+}
+.modal-hazte-cliente__pasos li::before {
+  content: counter(paso);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background-color: #E9540D;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-hazte-cliente__pasos strong {
+  color: #fff;
+}
+/* Footer escritorio: Conocenos e Informaciones más a la derecha (Canales de atención no se mueve) */
+@media (min-width: 992px) {
+  .footer-financia .menu-ft:not(:last-child) {
+    padding-left: 2.5rem;
+  }
+}
+@media (min-width: 1200px) {
+  .footer-financia .menu-ft:not(:last-child) {
+    padding-left: 4.5rem;
+  }
+}
+/* Footer escritorio: Conocenos 120px adicionales a la derecha */
+@media (min-width: 992px) {
+  .footer-financia .row > .menu-ft:nth-child(2) {
+    padding-left: calc(2.5rem + 60px); /* entre 992 y 1199px no hay espacio para más sin cortar "Quienes Somos" */
+  }
+}
+@media (min-width: 1200px) {
+  .footer-financia .row > .menu-ft:nth-child(2) {
+    padding-left: calc(4.5rem + 120px);
+  }
+}
+/* Simulador: consentimiento de uso de datos bajo "Solicitar Adelanto" (card azul) */
+.simulador-cta[aria-disabled="true"] {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+.simulador-cta[aria-disabled="true"]:hover {
+  background-color: #E9540D;
+}
+.simulador-consentimiento {
+  margin-top: 1rem;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.8);
+}
+.simulador-consentimiento .form-check-input {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+.simulador-consentimiento .form-check-input:checked {
+  background-color: #E9540D;
+  border-color: #E9540D;
+}
+.simulador-consentimiento a {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.simulador-consentimiento a:hover {
+  color: #E9540D;
+}
+.simulador-consentimiento__error {
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 0.78rem;
+  color: #FFB3B3;
+  margin: 0.4rem 0 0;
+}
+.simulador-consentimiento__error:empty {
+  display: none;
+}
+/* Blog: etiqueta de categoría en el slide de destacados (mismo estilo que las cards) */
+.blog-card__tag.destacado-slide__tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  padding: 4px 14px;
+  margin-bottom: 1rem;
+}
+/* Blog: etiqueta de categoría en el slide de destacados (mismo estilo que las cards) */
+.blog-card__tag.destacado-slide__tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  padding: 4px 14px;
+  margin-bottom: 1rem;
+}
+/* Blog: CTA fijo de la columna lateral (WhatsApp + Hazte cliente) */
+.article-sidebar__ctas {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.article-sidebar__ctas .btn-action-2,
+.article-sidebar__ctas .btn-action {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 10px 20px;
+  font-size: 1.05em;
+}
+/* Blog: firma "Equipo Financia Capital" enlazada a la Política editorial */
+.article-byline__autor {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.article-byline__autor:hover {
+  color: #E9540D;
 }
