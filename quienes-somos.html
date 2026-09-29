@@ -154,7 +154,10 @@
 
     <div class="offcanvas offcanvas-end offcanvas-lg navbar-dark bg-azul" tabindex="-1" id="navbarSupportedContent" aria-labelledby="navbarSupportedContentLabel">
       <div class="offcanvas-header">
-        <h5 class="offcanvas-title text-white" id="navbarSupportedContentLabel">Menú</h5>
+        <div class="offcanvas-brand">
+          <img src="imagenes/financia-capital-logo-blanco.png" width="150" class="img-fluid" alt="Financia Capital">
+          <h5 class="offcanvas-title visually-hidden" id="navbarSupportedContentLabel">Menú</h5>
+        </div>
         <button type="button" class="modal-hazte-cliente__close offcanvas-close" data-bs-dismiss="offcanvas" data-bs-target="#navbarSupportedContent" aria-label="Close">&times;</button>
       </div>
       <div class="offcanvas-body">
@@ -224,7 +227,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-6 p-5">
-            <h1 class="mb-lg-4 mb-lg-0 text-md-start "><span class="text-naranjo">Somos</span><br>Financia Capital</h1>
+            <h2 class="somos-fc__title mb-lg-4 mb-lg-0 text-md-start "><span class="text-naranjo">Somos</span><br>Financia Capital</h2>
             <p class="somos-fc__lead">
               Financia Capital es una empresa chilena de factoring para PyMEs, en operaciones desde 2011. Está regulada por la Comisión para el Mercado Financiero, cuenta con clasificación de riesgo BBB+ otorgada por Feller Rate y sus estados financieros son auditados por EY Audit Ltda. Atiende a más de 7.000 clientes en todo Chile.
             </p>
@@ -378,23 +381,120 @@
         </div>
       </div>
     </section>
-    <section class="galeria-somos pb-5" aria-label="Más de nosotros">
+    <!--Cómo trabajamos (propuesta de valor)-->
+    <section class="como-trabajamos" aria-labelledby="como-trabajamos-title">
       <div class="container">
-        <div class="row mt-5 mb-5">
+        <div class="row mb-4 mb-lg-5">
           <div class="col text-center">
-            <h2 class="mt-5 frase-action reveal"><img src="imagenes/isotipo-financiacapital.png" width="20" class="img-fluid pb-3" alt="" loading="lazy" decoding="async"> Más<span> de nosotros</span></h2>
+            <h2 id="como-trabajamos-title" class="frase-action reveal"><img src="imagenes/isotipo-financiacapital.png" width="20" class="img-fluid pb-3" alt="" loading="lazy" decoding="async"> Cómo <span>trabajamos</span></h2>
           </div>
         </div>
-        <div class="galeria-grid">
-          <div class="galeria-item" role="img" aria-label="Foto del equipo Financia Capital"></div>
-          <div class="galeria-item" role="img" aria-label="Foto del equipo Financia Capital"></div>
-          <div class="galeria-item" role="img" aria-label="Foto del equipo Financia Capital"></div>
-          <div class="galeria-item" role="img" aria-label="Foto del equipo Financia Capital"></div>
-          <div class="galeria-item" role="img" aria-label="Foto del equipo Financia Capital"></div>
+        <ul class="beneficios como-trabajamos__lista">
+          <li class="beneficio">
+            <span class="beneficio__icono" style="background-color:#E9540D;" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </span>
+            <div>
+              <h3 class="beneficio__titulo">Conocemos tus necesidades</h3>
+              <p class="beneficio__texto">Visitamos empresas y mantenemos reuniones periódicas para entender qué financiamiento necesita cada negocio.</p>
+            </div>
+          </li>
+          <li class="beneficio">
+            <span class="beneficio__icono" style="background-color:#19233E;" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg>
+            </span>
+            <div>
+              <h3 class="beneficio__titulo">Condiciones competitivas</h3>
+              <p class="beneficio__texto">Plazos y condiciones adaptados a la realidad de las MIPYMEs.</p>
+            </div>
+          </li>
+          <li class="beneficio">
+            <span class="beneficio__icono" style="background-color:#19233E;" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            </span>
+            <div>
+              <h3 class="beneficio__titulo">Agilidad</h3>
+              <p class="beneficio__texto">Somos líderes del mercado en velocidad: las operaciones de factoring se cursan el mismo día en que son aprobadas.</p>
+            </div>
+          </li>
+          <li class="beneficio">
+            <span class="beneficio__icono" style="background-color:#E9540D;" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            </span>
+            <div>
+              <h3 class="beneficio__titulo">Tecnología propia</h3>
+              <p class="beneficio__texto">Plataformas y sistemas de información desarrollados a la medida, siempre disponibles.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <!--Fin Cómo trabajamos-->
+
+    <!--Nuestro respaldo-->
+    <section class="respaldo bg-celeste" aria-labelledby="respaldo-title">
+      <div class="container-lg">
+        <div class="row align-items-center">
+          <div class="col-12 col-md-6">
+            <img src="imagenes/content-factoring-01.png" class="img-fluid mt-5 my-md-5 reveal" alt="Equipo revisando documentos financieros" loading="lazy" decoding="async">
+          </div>
+          <div class="col-12 col-md-6 p-4 py-5 p-lg-5">
+            <h2 id="respaldo-title" class="frase-action mb-4 reveal text-md-start"><img src="imagenes/isotipo-financiacapital.png" width="20" class="img-fluid pb-3" alt="" loading="lazy" decoding="async"> Nuestro <span>respaldo</span></h2>
+            <ul class="beneficios respaldo__lista">
+              <li class="beneficio">
+                <span class="beneficio__icono" style="background-color:#19233E;" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                </span>
+                <div>
+                  <h3 class="beneficio__titulo">Regulación</h3>
+                  <p class="beneficio__texto">Inscritos en el Registro de Valores de la Comisión para el Mercado Financiero. Línea de Efectos de Comercio N°166, Certificado N°327 del 13 de junio de 2025.</p>
+                </div>
+              </li>
+              <li class="beneficio">
+                <span class="beneficio__icono" style="background-color:#E9540D;" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 7-8.5 8.5-5-5L2 17"/><path d="M16 7h6v6"/></svg>
+                </span>
+                <div>
+                  <h3 class="beneficio__titulo">Clasificación de riesgo</h3>
+                  <p class="beneficio__texto">BBB+ con perspectivas estables, otorgada por Feller Rate el 30 de junio de 2026, en alza desde la categoría BBB.</p>
+                </div>
+              </li>
+              <li class="beneficio">
+                <span class="beneficio__icono" style="background-color:#19233E;" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="m9 15 2 2 4-4"/></svg>
+                </span>
+                <div>
+                  <h3 class="beneficio__titulo">Auditoría externa</h3>
+                  <p class="beneficio__texto">Nuestros estados financieros son auditados por EY Audit Ltda.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
-    <!--Fin Más de nosotros-->
+    <!--Fin Nuestro respaldo-->
+
+    <!--Ética, integridad y canal de denuncias-->
+    <section class="etica" aria-labelledby="etica-title">
+      <div class="container">
+        <div class="etica__grid">
+          <div class="etica__intro">
+            <h2 id="etica-title" class="frase-action mb-4 reveal text-lg-start"><img src="imagenes/isotipo-financiacapital.png" width="20" class="img-fluid pb-3" alt="" loading="lazy" decoding="async"> Ética, integridad y <span>canal de denuncias</span></h2>
+            <p class="etica__texto">Contamos con un Modelo de Prevención de Delitos estructurado conforme a la <strong>Ley N°20.393</strong> sobre responsabilidad penal de las personas jurídicas, que alcanza a directores, gerentes, colaboradores y terceros que actúen en nombre de la compañía.</p>
+          </div>
+          <div class="etica__detalle">
+            <p class="etica__texto">El modelo opera sobre cuatro ejes: prevención, con capacitación anual obligatoria e identificación periódica de riesgos; detección, mediante auditorías internas de cumplimiento; respuesta, a través de un canal de denuncias confidencial y un procedimiento formal de investigación; y supervisión continua.</p>
+            <p class="etica__texto">Su implementación es responsabilidad del Encargado de Prevención de Delitos, cargo con autonomía funcional respecto de la administración y acceso directo al Directorio, que rinde cuenta anualmente.</p>
+            <p class="etica__texto">El marco se complementa con políticas internas sobre prevención del fraude y la corrupción, conflictos de interés, relación con proveedores y seguridad de la información, y se extiende a la <strong>Ley N°21.459</strong> sobre delitos informáticos y la <strong>Ley N°21.595</strong> sobre delitos económicos.</p>
+          </div>
+          <div class="etica__accion">
+            <a class="btn-action-2 text-center etica__cta" href="canal-denuncias.html" data-evento="quienes-somos-canal-etico">Ir al canal ético</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--Fin Ética, integridad y canal de denuncias-->
 
     </main>
     <footer>
@@ -457,11 +557,11 @@
     </footer>
 
     <!--Chat flotante-->
-    <button type="button" class="chat-fab" data-bs-toggle="modal" data-bs-target="#modalHazteCliente" aria-label="Abrir chat con Financia Capital" data-evento="chat-flotante">
+    <a class="chat-fab" href="https://wa.me/56997974079?text=Hola%2C%20tengo%20una%20consulta" target="_blank" rel="noopener noreferrer" aria-label="Escribir por WhatsApp a Financia Capital" data-evento="whatsapp-flotante">
       <svg class="chat-fab__icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
         <path d="M16 8c0 3.866-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7M5 8a1 1 0 1 0-2 0 1 1 0 0 0 2 0m4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0m3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
       </svg>
-    </button>
+    </a>
     <!--Fin chat flotante-->
 
     <!--Modal Hazte Cliente-->

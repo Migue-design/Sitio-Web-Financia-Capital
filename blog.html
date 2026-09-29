@@ -193,7 +193,10 @@
 
     <div class="offcanvas offcanvas-end offcanvas-lg navbar-dark bg-azul" tabindex="-1" id="navbarSupportedContent" aria-labelledby="navbarSupportedContentLabel">
       <div class="offcanvas-header">
-        <h5 class="offcanvas-title text-white" id="navbarSupportedContentLabel">Menú</h5>
+        <div class="offcanvas-brand">
+          <img src="imagenes/financia-capital-logo-blanco.png" width="150" class="img-fluid" alt="Financia Capital">
+          <h5 class="offcanvas-title visually-hidden" id="navbarSupportedContentLabel">Menú</h5>
+        </div>
         <button type="button" class="modal-hazte-cliente__close offcanvas-close" data-bs-dismiss="offcanvas" data-bs-target="#navbarSupportedContent" aria-label="Close">&times;</button>
       </div>
       <div class="offcanvas-body">
@@ -311,7 +314,7 @@
           <a href="#" class="filtro-pill" data-categoria="normativa">Normativa</a>
         </div>
 
-        <div class="blog-grid" data-por-pagina="3">
+        <div class="blog-grid" data-por-pagina="12">
 <a href="cesion-de-facturas.html" class="blog-card" data-categoria="cesion-de-facturas">
             <div class="blog-card__media">
               <img src="imagenes/como-funciona-fc.jpg" alt="Cesión de facturas en Chile" loading="lazy" decoding="async">
@@ -338,7 +341,7 @@
             </div>
           </a>
 
-          <a href="factoring-vs-credito-bancario.html" class="blog-card">
+          <a href="factoring-vs-credito-bancario.html" class="blog-card" data-categoria="factoring">
             <div class="blog-card__media">
               <img src="imagenes/proposito-img.png" alt="Factoring versus crédito bancario para pymes" loading="lazy" decoding="async">
             </div>
@@ -434,11 +437,11 @@
     </footer>
 
     <!--Chat flotante-->
-    <button type="button" class="chat-fab" data-bs-toggle="modal" data-bs-target="#modalHazteCliente" aria-label="Abrir chat con Financia Capital" data-evento="chat-flotante">
+    <a class="chat-fab" href="https://wa.me/56997974079?text=Hola%2C%20tengo%20una%20consulta" target="_blank" rel="noopener noreferrer" aria-label="Escribir por WhatsApp a Financia Capital" data-evento="whatsapp-flotante">
       <svg class="chat-fab__icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
         <path d="M16 8c0 3.866-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7M5 8a1 1 0 1 0-2 0 1 1 0 0 0 2 0m4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0m3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
       </svg>
-    </button>
+    </a>
     <!--Fin chat flotante-->
 
     <!--Modal Hazte Cliente-->
@@ -618,16 +621,27 @@
           }));
         }
 
+        function activarFiltro(pill) {
+          categoriaActual = pill.getAttribute('data-categoria');
+          paginaActual = 1;
+          filtros.forEach(function (p) { p.classList.remove('active'); });
+          pill.classList.add('active');
+        }
+
         filtros.forEach(function (pill) {
           pill.addEventListener('click', function (e) {
             e.preventDefault();
-            categoriaActual = pill.getAttribute('data-categoria');
-            paginaActual = 1;
-            filtros.forEach(function (p) { p.classList.remove('active'); });
-            pill.classList.add('active');
+            activarFiltro(pill);
             render();
           });
         });
+
+        // blog.html?categoria=<slug> abre el listado ya filtrado (enlace de la miga de pan y la etiqueta de cada artículo).
+        try {
+          var categoriaUrl = new URLSearchParams(window.location.search).get('categoria');
+          var pillUrl = categoriaUrl && Array.prototype.find.call(filtros, function (p) { return p.getAttribute('data-categoria') === categoriaUrl; });
+          if (pillUrl) activarFiltro(pillUrl);
+        } catch (e) {}
 
         render();
       })();

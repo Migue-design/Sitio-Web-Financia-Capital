@@ -133,7 +133,10 @@
 
     <div class="offcanvas offcanvas-end offcanvas-lg navbar-dark bg-azul" tabindex="-1" id="navbarSupportedContent" aria-labelledby="navbarSupportedContentLabel">
       <div class="offcanvas-header">
-        <h5 class="offcanvas-title text-white" id="navbarSupportedContentLabel">Menú</h5>
+        <div class="offcanvas-brand">
+          <img src="imagenes/financia-capital-logo-blanco.png" width="150" class="img-fluid" alt="Financia Capital">
+          <h5 class="offcanvas-title visually-hidden" id="navbarSupportedContentLabel">Menú</h5>
+        </div>
         <button type="button" class="modal-hazte-cliente__close offcanvas-close" data-bs-dismiss="offcanvas" data-bs-target="#navbarSupportedContent" aria-label="Close">&times;</button>
       </div>
       <div class="offcanvas-body">
@@ -400,11 +403,11 @@
     </footer>
 
     <!--Chat flotante-->
-    <button type="button" class="chat-fab" data-bs-toggle="modal" data-bs-target="#modalHazteCliente" aria-label="Abrir chat con Financia Capital" data-evento="chat-flotante">
+    <a class="chat-fab" href="https://wa.me/56997974079?text=Hola%2C%20tengo%20una%20consulta" target="_blank" rel="noopener noreferrer" aria-label="Escribir por WhatsApp a Financia Capital" data-evento="whatsapp-flotante">
       <svg class="chat-fab__icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
         <path d="M16 8c0 3.866-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7M5 8a1 1 0 1 0-2 0 1 1 0 0 0 2 0m4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0m3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
       </svg>
-    </button>
+    </a>
     <!--Fin chat flotante-->
 
     <!--Modal Hazte Cliente-->

@@ -479,24 +479,25 @@ p {
   transform: initial;
 }
 /*Quienes Somos*/
-.somos-fc h1{
+/* "Somos Financia Capital" es H2 (la página tiene un solo H1, en el hero); conserva el aspecto que tenía como H1. */
+.somos-fc__title {
   font-weight: 620;
   font-size: 2em;
   line-height: 1em;
 }
 /* Mismo escalado responsive que .frase-action, para que coincida con títulos como "Conoce nuestra historia". */
 @media (min-width: 768px) {
-  .somos-fc h1 {
+  .somos-fc__title {
     font-size: 1.8em;
   }
 }
 @media (min-width: 992px) {
-  .somos-fc h1 {
+  .somos-fc__title {
     font-size: 2em;
   }
 }
 @media (min-width: 1200px) {
-  .somos-fc h1 {
+  .somos-fc__title {
     font-size: 2.5em;
   }
 }
@@ -872,9 +873,6 @@ p {
     max-height:640px;
     aspect-ratio: 1500 / 640;
   }
-  .box-text {
-    margin-top: 100px;
-  }
    .box-caracteristicas {
     margin-top:120px;
   }
@@ -966,7 +964,8 @@ p {
     border-right: 15px solid #ffff;
   }
   .box-2 {
-    margin-top: 30%;
+    margin-top: 25%;
+    margin-bottom: 4rem;
   }
   .box-2 p {
     font-size: 1.1em;
@@ -1935,8 +1934,12 @@ p {
   color: #fff;
 }
 .simulador-resultado .simulador-panel__icon {
-  background-color: #2c3a5e;
-  color: #E9540D;
+  background-color: #E9540D;
+  color: #fff;
+}
+.simulador-label-icon {
+  flex-shrink: 0;
+  color: #fff;
 }
 .simulador-field {
   margin-bottom: 1.5rem;
@@ -2100,8 +2103,8 @@ p {
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background-color: #d7e5ff;
-  color: #19233E;
+  background-color: #19233E;
+  color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2580,6 +2583,69 @@ p {
   text-decoration: underline;
 }
 
+/* Menú móvil (sidebar): logo con "Menú" debajo, y los CTAs con el mismo estilo que en escritorio */
+@media (max-width: 991.98px) {
+  /* Logo del sidebar: mismo tamaño y posición que el logo del navbar móvil (120px, a 12px del borde y 15px arriba) */
+  .navbar .offcanvas-header {
+    padding: 15px 12px 15px 11px; /* 11px + 1px del borde del panel = 12px, igual que el navbar */
+    align-items: flex-start;
+  }
+  .offcanvas-brand {
+    display: flex;
+    align-items: center;
+  }
+  .offcanvas-brand img {
+    width: 120px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  /* Desde 768px el logo del navbar mide 150px y queda a 13px del borde superior */
+  .navbar .offcanvas-header {
+    padding-top: 13px;
+  }
+  .offcanvas-brand img {
+    width: 150px;
+  }
+}
+@media (max-width: 991.98px) {
+  .navbar .nav-item-cta {
+    margin-top: 1.75rem;
+  }
+  .navbar .nav-link.nav-cta-cliente {
+    display: block;
+    text-align: center;
+    color: #E9540D;
+    border: 3px solid #E9540D;
+    border-radius: 40px;
+    padding: 10px 14px;
+    font-weight: 600;
+    line-height: 1.5;
+  }
+  .navbar .nav-link.nav-cta-cliente:hover,
+  .navbar .nav-link.nav-cta-cliente:focus {
+    background-color: #E9540D;
+    color: #fff;
+  }
+  .navbar .nav-item-cta + .nav-item {
+    margin-top: 0.75rem !important;
+  }
+  .navbar .btn-action.btn-ingresar {
+    display: block;
+    text-align: center;
+    color: #fff;
+    background-color: transparent;
+    border: 3px solid #fff;
+    border-radius: 40px;
+    padding: 10px 14px;
+    line-height: 1.5;
+  }
+  .navbar .btn-action.btn-ingresar:hover,
+  .navbar .btn-action.btn-ingresar:focus {
+    background-color: #fff;
+    color: #19233E;
+  }
+}
+
 /* Navbar escritorio: links centrados y CTAs destacados a la derecha */
 @media (min-width: 992px) {
   .navbar .offcanvas-lg .offcanvas-body {
@@ -2647,17 +2713,12 @@ p {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(25, 35, 62, 0.45);
+  background: rgba(25, 35, 62, 0.4); /* velo homogéneo #19233E, igual en Home y Factoring */
   pointer-events: none;
 }
 @media (min-width: 576px) {
   .box-banner--video {
     aspect-ratio: 1512 / 664;
-  }
-}
-@media (min-width: 768px) {
-  .box-banner--video::after {
-    background: linear-gradient(90deg, rgba(25, 35, 62, 0.55) 0%, rgba(25, 35, 62, 0.15) 55%, rgba(25, 35, 62, 0) 100%);
   }
 }
 @media (min-width: 992px) {
@@ -3115,4 +3176,237 @@ select.modal-hazte-cliente__input:disabled {
 }
 .article-byline__autor:hover {
   color: #E9540D;
+}
+/* Factoring: H1 de 3.5em en escritorio. Entre 992 y 1199px baja a 3.2em: a 3.5em ocupa 4 líneas y se sale del fondo del hero. */
+@media (min-width: 992px) {
+  .hero--factoring .title-text {
+    font-size: 3.5em;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .hero--factoring .title-text {
+    font-size: 3.2em;
+  }
+}
+/* Factoring, tablet: el navbar usa .container (720px centrado) y el hero .container-lg (ancho completo).
+   Se desplaza el texto del hero para que parta en la misma línea que el logo. */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .hero--factoring .box-text {
+    padding-left: calc(50% - 360px + 12px);
+  }
+}
+/* Factoring: mismo video del Home como fondo del hero, conservando la proporción que tenía su imagen en escritorio (1500/640) */
+@media (min-width: 992px) {
+  .box-banner--video.box-banner--factoring {
+    aspect-ratio: 1500 / 640;
+  }
+}
+/* Factoring: sin bandas celestes ni esquinas redondeadas abajo */
+.box-banner--video.box-banner--factoring {
+  box-shadow: none;
+  border-radius: 0;
+}
+/* Factoring: consentimiento en el formulario del hero (el formulario móvil centra su texto) */
+.form-financia .contacto-consentimiento {
+  text-align: left;
+}
+/* Factoring: beneficios de operar con Financia Capital (lista vertical con ícono en círculo) */
+.beneficios {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 0;
+  max-width: 34rem;
+}
+.beneficio {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.beneficio:last-child {
+  margin-bottom: 0;
+}
+.beneficio__icono {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  color: #fff;
+}
+.beneficio__titulo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #19233E;
+  margin: 0.35rem 0 0.35rem;
+}
+.beneficio__texto {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #5E5E5E;
+  margin: 0;
+}
+.beneficio {
+  text-align: left; /* en móvil la sección centra su texto */
+}
+@media (max-width: 767.98px) {
+  .beneficios {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+/* Factoring: sección "¿Qué facturas puedes ceder?" sobre naranjo institucional */
+.requisitos--naranjo .requisitos__nota {
+  font-size: 0.9rem;
+  line-height: 1.55;
+  max-width: 36rem;
+}
+.btn-action-2.btn-blanco {
+  background-color: #fff;
+  color: #E9540D;
+}
+.btn-action-2.btn-blanco:hover,
+.btn-action-2.btn-blanco:focus-visible {
+  background-color: #19233E;
+  color: #fff;
+}
+.requisitos--naranjo .frase-action span {
+  color: #19233E; /* sobre naranjo, el acento del título pasa a azul */
+}
+.requisitos--naranjo img[src$="financia-capital-logo-blanco.png"] {
+  filter: brightness(0) invert(1); /* logo 100% blanco: la flecha naranja se perdía sobre el fondo */
+}
+/* Factoring: sección "¿Qué significa factorizar una factura?" (dos columnas, imagen a la derecha, fondo blanco) */
+.factorizar-section__img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 110px 20px 20px 20px; /* curva espejada respecto de la imagen de la sección naranja */
+}
+.factorizar-section h2 {
+  line-height: 1.2; /* el título ocupa dos líneas y el interlineado heredado las junta demasiado */
+}
+.factorizar-section__texto {
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #333;
+  max-width: 36rem;
+}
+/* Quiénes somos: "Cómo trabajamos" (usa la lista .beneficios de Factoring, en dos columnas) */
+.como-trabajamos {
+  padding-top: 3rem; /* 48px en móvil y tablet, el espacio que tenía antes */
+  padding-bottom: 3rem;
+}
+@media (min-width: 992px) {
+  .como-trabajamos {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}
+.beneficios.como-trabajamos__lista {
+  max-width: 60rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+.como-trabajamos__lista .beneficio {
+  margin-bottom: 0;
+}
+@media (min-width: 768px) {
+  .beneficios.como-trabajamos__lista {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 3.5rem;
+    row-gap: 2.5rem;
+  }
+}
+/* Escritorio: 4 columnas, con el ícono sobre el título para que el texto aproveche el ancho de cada columna */
+@media (min-width: 992px) {
+  .beneficios.como-trabajamos__lista {
+    max-width: none;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 2rem;
+  }
+  .como-trabajamos__lista .beneficio {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .como-trabajamos__lista .beneficio__titulo {
+    margin-top: 0;
+  }
+}
+/* Quiénes somos: "Ética, integridad y canal de denuncias" (mismo espaciado que "Cómo trabajamos") */
+.etica {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+@media (min-width: 992px) {
+  .etica {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}
+.etica h2 {
+  line-height: 1.2;
+}
+.etica__texto {
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #333;
+}
+.etica__texto strong {
+  color: #19233E;
+}
+.btn-action-2.etica__cta {
+  margin-bottom: 0;
+}
+/* Móvil/tablet: título e intro, luego el resto del texto y el botón al final.
+   Escritorio: título, intro y botón a la izquierda; el resto del texto a la derecha. */
+.etica__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "intro" "detalle" "accion";
+  row-gap: 0.5rem;
+}
+.etica__intro { grid-area: intro; }
+.etica__detalle { grid-area: detalle; }
+.etica__accion { grid-area: accion; }
+@media (max-width: 991.98px) {
+  .etica h2 {
+    text-align: center;
+  }
+  .etica__accion {
+    margin-top: 0.5rem;
+  }
+  .btn-action-2.etica__cta {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media (min-width: 992px) {
+  .etica__grid {
+    grid-template-columns: 5fr 7fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: "intro detalle" "accion detalle";
+    column-gap: 3rem;
+    row-gap: 0.5rem;
+  }
+}
+/* Quiénes somos: fechas de la línea de tiempo en negrita */
+.linea-tiempo h5.text-naranjo {
+  font-weight: 700;
+}
+/* Quiénes somos: "Nuestro respaldo" (imagen a la izquierda, título y lista vertical a la derecha) */
+.respaldo h2 {
+  line-height: 1.2;
+}
+@media (max-width: 767.98px) {
+  .beneficios.respaldo__lista {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }

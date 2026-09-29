@@ -154,7 +154,10 @@
 
     <div class="offcanvas offcanvas-end offcanvas-lg navbar-dark bg-azul" tabindex="-1" id="navbarSupportedContent" aria-labelledby="navbarSupportedContentLabel">
       <div class="offcanvas-header">
-        <h5 class="offcanvas-title text-white" id="navbarSupportedContentLabel">Menú</h5>
+        <div class="offcanvas-brand">
+          <img src="imagenes/financia-capital-logo-blanco.png" width="150" class="img-fluid" alt="Financia Capital">
+          <h5 class="offcanvas-title visually-hidden" id="navbarSupportedContentLabel">Menú</h5>
+        </div>
         <button type="button" class="modal-hazte-cliente__close offcanvas-close" data-bs-dismiss="offcanvas" data-bs-target="#navbarSupportedContent" aria-label="Close">&times;</button>
       </div>
       <div class="offcanvas-body">
@@ -232,7 +235,7 @@
           <!--Formulario-->
           <div class="simulador-form">
             <div class="simulador-panel__title text-azul">
-              <span class="simulador-panel__icon" aria-hidden="true">🧮</span>
+              <span class="simulador-panel__icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8"/><path d="M8 11h.01M12 11h.01M16 11h.01M8 15h.01M12 15h.01M16 15h.01M8 19h.01M12 19h.01M16 19h.01"/></svg></span>
               Datos de tu factura
             </div>
 
@@ -272,7 +275,7 @@
           <!--Resultado-->
           <div class="simulador-resultado">
             <div class="simulador-panel__title">
-              <span class="simulador-panel__icon" aria-hidden="true">📈</span>
+              <span class="simulador-panel__icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m22 7-8.5 8.5-5-5L2 17"/><path d="M16 7h6v6"/></svg></span>
               Resultado
             </div>
 
@@ -290,7 +293,7 @@
             </div>
 
             <div class="simulador-resultado__highlight">
-              <div class="label"><span aria-hidden="true">🕐</span> Monto estimado a recibir</div>
+              <div class="label"><svg class="simulador-label-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Monto estimado a recibir</div>
               <div class="value" id="resNeto">$0</div>
             </div>
 
@@ -313,7 +316,7 @@
         </div>
 
         <div class="simulador-info reveal">
-          <span class="simulador-info__icon" aria-hidden="true">i</span>
+          <span class="simulador-info__icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 18v-7"/><path d="M12 6.5h.01"/></svg></span>
           <!-- TODO: falta definir el destino de este link (¿WhatsApp, formulario de contacto, agendamiento?) -->
           <p><strong>Recuerda:</strong> Los valores son referenciales y pueden variar según la evaluación de tu empresa, <a href="#">habla con un ejecutivo</a> para tener una evaluación.</p>
         </div>
@@ -381,11 +384,11 @@
     </footer>
 
     <!--Chat flotante-->
-    <button type="button" class="chat-fab" data-bs-toggle="modal" data-bs-target="#modalHazteCliente" aria-label="Abrir chat con Financia Capital" data-evento="chat-flotante">
+    <a class="chat-fab" href="https://wa.me/56997974079?text=Hola%2C%20tengo%20una%20consulta" target="_blank" rel="noopener noreferrer" aria-label="Escribir por WhatsApp a Financia Capital" data-evento="whatsapp-flotante">
       <svg class="chat-fab__icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
         <path d="M16 8c0 3.866-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7M5 8a1 1 0 1 0-2 0 1 1 0 0 0 2 0m4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0m3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
       </svg>
-    </button>
+    </a>
     <!--Fin chat flotante-->
 
     <!--Modal Hazte Cliente-->
