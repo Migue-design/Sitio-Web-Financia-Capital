@@ -89,6 +89,37 @@ p {
 .hero-content--somos .box-text {
   margin-top: 50px;
 }
+/* Hero con video de fondo (Quiénes somos, Simulador): mantiene los 400px de alto del hero */
+.hero-content--video {
+  position: relative;
+  overflow: hidden;
+  background: #19233E url("../imagenes/hero-home-poster.jpg") center / cover no-repeat;
+}
+.hero-content__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+.hero-content--video::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(25, 35, 62, 0.4); /* mismo velo #19233E del Home y Factoring */
+  z-index: 1;
+  pointer-events: none;
+}
+.hero-content--video > .container {
+  position: relative;
+  z-index: 2;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-content__video {
+    display: none; /* queda la imagen de respaldo como fondo */
+  }
+}
 @media (max-width: 767.98px) {
   .hero-content--simular {
     margin-top: 35px;
@@ -1760,8 +1791,7 @@ p {
   height: 100%;
   object-fit: cover;
   display: block;
-}
-@media (max-width: 767.98px) {
+}@media (max-width: 767.98px) {
   .article-hero,
   .article-body {
     padding-left: 10px;
@@ -1809,6 +1839,7 @@ p {
   border-radius: 15px;
   background-color: #19233E;
   color: #fff;
+  text-align: center;
 }
 .article-callout p {
   margin-bottom: 1rem;
@@ -2230,12 +2261,20 @@ p {
     width: 100%;
     height: auto;
   }
-  .destacado-slide {
+  /* Todos los slides con el alto del más largo, y el azul hasta abajo: si no, en los cortos
+     quedaba una franja blanca bajo el texto, justo donde van los bullets. */
+  .destacados-swiper {
+    background-color: #19233E;
+  }
+  .destacados-swiper .swiper-wrapper {
+    align-items: stretch;
+  }
+  .destacados-swiper .swiper-slide.destacado-slide {
     flex-direction: column;
     height: auto;
   }
   .destacado-slide__info {
-    flex: none;
+    flex: 1 0 auto;
     max-width: 100%;
     height: auto;
   }
@@ -3147,13 +3186,6 @@ select.modal-hazte-cliente__input:disabled {
   padding: 4px 14px;
   margin-bottom: 1rem;
 }
-/* Blog: etiqueta de categoría en el slide de destacados (mismo estilo que las cards) */
-.blog-card__tag.destacado-slide__tag {
-  display: inline-block;
-  font-size: 0.7rem;
-  padding: 4px 14px;
-  margin-bottom: 1rem;
-}
 /* Blog: CTA fijo de la columna lateral (WhatsApp + Hazte cliente) */
 .article-sidebar__ctas {
   display: flex;
@@ -3271,6 +3303,12 @@ select.modal-hazte-cliente__input:disabled {
 .btn-action-2.btn-blanco:focus-visible {
   background-color: #19233E;
   color: #fff;
+}
+.requisitos--naranjo img[src$="que-facturas-se-pueden-ceder.png"] {
+  display: block;
+  width: 85%; /* 15% más pequeña que el ancho de su columna */
+  margin-left: auto;
+  margin-right: auto;
 }
 .requisitos--naranjo .frase-action span {
   color: #19233E; /* sobre naranjo, el acento del título pasa a azul */
