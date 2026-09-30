@@ -3304,11 +3304,19 @@ select.modal-hazte-cliente__input:disabled {
   background-color: #19233E;
   color: #fff;
 }
-.requisitos--naranjo img[src$="que-facturas-se-pueden-ceder.png"] {
+/* Imágenes de "¿Qué facturas puedes ceder?" y "¿Qué significa factorizar?": mismo tamaño */
+.requisitos--naranjo img[src$="que-facturas-se-pueden-ceder.png"],
+.factorizar-section .factorizar-section__img {
   display: block;
   width: 85%; /* 15% más pequeña que el ancho de su columna */
   margin-left: auto;
   margin-right: auto;
+}
+@media (max-width: 767.98px) {
+  .requisitos--naranjo img[src$="que-facturas-se-pueden-ceder.png"],
+  .factorizar-section .factorizar-section__img {
+    width: 100%; /* en celular, a todo el ancho de la columna */
+  }
 }
 .requisitos--naranjo .frase-action span {
   color: #19233E; /* sobre naranjo, el acento del título pasa a azul */
@@ -3320,8 +3328,12 @@ select.modal-hazte-cliente__input:disabled {
 .factorizar-section__img {
   width: 100%;
   aspect-ratio: 1 / 1;
-  object-fit: cover;
-  border-radius: 110px 20px 20px 20px; /* curva espejada respecto de la imagen de la sección naranja */
+  object-fit: cover; /* la imagen trae sus esquinas redondeadas y sombra incluidas */
+}
+@media (min-width: 992px) {
+  .factorizar-section {
+    padding-top: 80px; /* solo escritorio */
+  }
 }
 .factorizar-section h2 {
   line-height: 1.2; /* el título ocupa dos líneas y el interlineado heredado las junta demasiado */
