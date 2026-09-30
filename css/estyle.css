@@ -2401,6 +2401,15 @@ p {
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.9);
 }
+.ayuda-hero__lead a {
+  color: #fff;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.ayuda-hero__lead a:hover {
+  color: #E9540D;
+}
 @media (max-width: 767.98px) {
   .ayuda-hero__lead {
     margin-left: auto;
@@ -2731,6 +2740,30 @@ p {
     background-color: #fff;
     color: #19233E;
   }
+}
+
+/* Navbar (escritorio y menú móvil): CTAs sólidos con sus mismos colores */
+.navbar .nav-link.nav-cta-cliente,
+.navbar .nav-link.nav-cta-cliente:focus {
+  background-color: #E9540D;
+  border-color: #E9540D;
+  color: #fff;
+}
+.navbar .nav-link.nav-cta-cliente:hover {
+  background-color: #bf3f04;
+  border-color: #bf3f04;
+  color: #fff;
+}
+.navbar .btn-action.btn-ingresar,
+.navbar .btn-action.btn-ingresar:focus {
+  background-color: #fff;
+  border-color: #fff;
+  color: #19233E;
+}
+.navbar .btn-action.btn-ingresar:hover {
+  background-color: #E0E5ED;
+  border-color: #E0E5ED;
+  color: #19233E;
 }
 
 /* Hero home con video de fondo */
@@ -3290,6 +3323,29 @@ select.modal-hazte-cliente__input:disabled {
   }
 }
 /* Factoring: sección "¿Qué facturas puedes ceder?" sobre naranjo institucional */
+/* Enlace de cierre al artículo de cesión (blanco sobre naranjo) */
+.requisitos--naranjo .link-cesion {
+  display: inline-block;
+  margin-top: 0.5rem;
+  margin-left: 0.5rem;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.requisitos--naranjo .link-cesion:hover,
+.requisitos--naranjo .link-cesion:focus-visible {
+  color: #19233E;
+}
+@media (max-width: 767.98px) {
+  .requisitos--naranjo .link-cesion {
+    display: block;
+    margin: 0 0 2.5rem;
+    text-align: center;
+  }
+}
 .requisitos--naranjo .requisitos__nota {
   font-size: 0.9rem;
   line-height: 1.55;
@@ -3446,11 +3502,36 @@ select.modal-hazte-cliente__input:disabled {
     row-gap: 0.5rem;
   }
 }
+/* Párrafo de respuesta (Notion): bajo el H2 de la sección, centrado y a ~800px de ancho */
+.parrafo-respuesta {
+  max-width: 800px;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #333;
+}
+.parrafo-respuesta.beneficios__intro {
+  max-width: 46rem;
+}
+@media (max-width: 767.98px) {
+  .parrafo-respuesta.beneficios__intro {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 /* Quiénes somos: fechas de la línea de tiempo en negrita */
 .linea-tiempo h5.text-naranjo {
   font-weight: 700;
 }
 /* Quiénes somos: "Nuestro respaldo" (imagen a la izquierda, título y lista vertical a la derecha) */
+.respaldo__link {
+  color: #E9540D;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.respaldo__link:hover {
+  color: #bf3f04;
+}
 .respaldo h2 {
   line-height: 1.2;
 }

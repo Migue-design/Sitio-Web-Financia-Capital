@@ -45,7 +45,7 @@
       "telephone": "+56-9-9797-4079",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Manquehue Norte 160, piso 14",
+        "streetAddress": "Av. Manquehue Nte. 160, Ofi 141",
         "addressLocality": "Las Condes",
         "addressRegion": "Región Metropolitana",
         "addressCountry": "CL"
@@ -75,7 +75,7 @@
           "name": "¿Cuánto se demora el proceso?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "La evaluación inicial toma entre 4 y 24 horas. Una vez aprobada la operación, cursamos el mismo día y transferimos el monto acordado a tu cuenta."
+            "text": "La evaluación inicial toma alrededor de 24 horas. Una vez aprobada la operación, cursamos el mismo día y transferimos el monto acordado a tu cuenta."
           }
         },
         {
@@ -294,11 +294,12 @@
           <div class="p-lg-0 ms-lg-3 p-4 ps-md-4 pe-md-0 py-md-0 py-sm-0 box-2">
 
             <h2 class="frase-action"><span>Beneficios</span> de operar con Financia Capital</h2>
+            <p class="parrafo-respuesta beneficios__intro mt-3 mb-0">Adelanta el pago de tus facturas sin esperar el plazo acordado. No es un crédito: no genera deuda ni exige garantías.</p>
 
             <ul class="beneficios mt-4 mt-lg-5">
               <li class="beneficio">
                 <span class="beneficio__icono" style="background-color:#E9540D;" aria-hidden="true">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
                 </span>
                 <div>
                   <h3 class="beneficio__titulo">Liquidez inmediata</h3>
@@ -375,21 +376,19 @@
     <!--Documentos que puedes ceder-->
     <div class="container-fluid bg-naranjo requisitos requisitos--naranjo">
       <div class="container-lg">
-        <div class="row">
+        <div class="row align-items-md-center">
           <div class="col-12 col-md-6 col-lg-6">
             <img src="imagenes/que-facturas-se-pueden-ceder.png" class="img-fluid transform-lg-scale-1 mt-5 my-lg-4 reveal" alt="Emprendedora sonriente con una tablet en la bodega de su negocio" loading="lazy" decoding="async">
           </div>
-          <div class="col-12 col-md-6 col-lg-6 p-lg-5 p-4 pt-5">
+          <div class="col-12 col-md-6 col-lg-6 p-lg-5 p-4 pt-5 pt-md-4">
             <!--<img src="imagenes/financia-capital-logo-blanco.png" width="120" class="img-fluid mt-lg-5 ms-lg-2" alt="Financia Capital" loading="lazy" decoding="async">-->
-            <h2 class="mt-5 mb-lg-4 ms-lg-2 mt-lg-5 frase-action text-blanco mb-4 reveal text-md-start">¿Qué facturas puedes ceder?</h2>
+            <h2 class="mt-5 mt-md-0 mb-lg-4 ms-lg-2 frase-action text-blanco mb-4 reveal text-md-start">¿Qué facturas puedes ceder?</h2>
             <h4 class="text-blanco mb-lg-4">En Financia Capital puedes ceder dos tipos de documento tributario electrónico:</h4>
             <ul class="mb-5 mb-lg-3 ms-lg-2 text-blanco">
               <li><img src="imagenes/check-blanco.svg" class="img-fluid mb-2 me-2" alt="" aria-hidden="true" loading="lazy" decoding="async">Factura Electrónica (DTE tipo 33), la factura afecta a IVA.</li>
               <li><img src="imagenes/check-blanco.svg" class="img-fluid mb-2 me-2" alt="" aria-hidden="true" loading="lazy" decoding="async">Factura No Afecta o Exenta Electrónica (DTE tipo 34).</li>
             </ul>
-            <p class="text-blanco requisitos__nota">Ambas cuentan con copia cedible, que es el documento que permite transferir el derecho de cobro conforme a la Ley 19.983 y registrar la cesión en el SII.</p>
-            <p class="text-blanco requisitos__nota">En los dos casos la factura debe estar emitida, recibida y aceptada por tu cliente, sin reclamos ni objeciones registradas dentro del plazo legal.</p>
-            <a class="btn-action-2 btn-blanco text-center mt-lg-5" data-evento="whatsapp-requisitos" target="_blank" rel="noopener noreferrer" href="https://wa.me/56997974079?text=Hola%2C%20quiero%20cotizar%20una%20operaci%C3%B3n%20de%20factoring">Habla con un ejecutivo</a>
+            <a class="link-cesion" href="cesion-de-facturas.html" data-evento="factoring-link-cesion">Conoce más sobre la cesión de facturas →</a>
           </div>
         </div>
       </div>
@@ -457,11 +456,11 @@
             <!--Acordion-->
             <div class="accordion preguntas mt-lg-5" id="accordionExample">
             <div class="accordion-item">
-              <h2 class="accordion-header">
+              <h4 class="accordion-header">
                 <button class="accordion-button" type="button" data-evento="faq-requisitos" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                   ¿Qué necesito para operar?
                 </button>
-              </h2>
+              </h4>
               <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
                   <p>Necesitas al menos un año tributario de antigüedad, tu carpeta tributaria al día, estados financieros recientes, antecedentes legales y facturas emitidas a empresas solventes. Con eso podemos hacer la evaluación inicial.</p>
@@ -469,23 +468,23 @@
               </div>
             </div>
             <div class="accordion-item">
-              <h2 class="accordion-header">
+              <h4 class="accordion-header">
                 <button class="accordion-button collapsed" type="button" data-evento="faq-plazos" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                   ¿Cuánto se demora el proceso?
                 </button>
-              </h2>
+              </h4>
               <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-                  <p>La evaluación inicial toma entre 4 y 24 horas. Una vez aprobada la operación, cursamos el mismo día y transferimos el monto acordado a tu cuenta.</p>
+                  <p>La evaluación inicial toma alrededor de 24 horas. Una vez aprobada la operación, cursamos el mismo día y transferimos el monto acordado a tu cuenta.</p>
                 </div>
               </div>
             </div>
             <div class="accordion-item">
-              <h2 class="accordion-header">
+              <h4 class="accordion-header">
                 <button class="accordion-button collapsed" type="button" data-evento="faq-costos" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                   ¿Cuáles son los costos de operar con Financia Capital?
                 </button>
-              </h2>
+              </h4>
               <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
                   <p>El costo de cada operación depende de tres variables: el plazo de la factura, el perfil de riesgo del deudor y el monto. Se define caso a caso y te lo informamos antes de que aceptes la propuesta. Abrir tu cuenta no tiene costo: nunca cobramos por enrolarte ni por evaluar tu empresa. Solo pagas cuando cursas una operación.</p>
@@ -493,11 +492,11 @@
               </div>
             </div>
             <div class="accordion-item">
-              <h2 class="accordion-header">
+              <h4 class="accordion-header">
                 <button class="accordion-button collapsed" type="button" data-evento="faq-dicom" data-bs-toggle="collapse" data-bs-target="#collapsefour" aria-expanded="false" aria-controls="collapsefour">
                   ¿Puedo operar si tengo atrasos tributarios o Dicom?
                 </button>
-              </h2>
+              </h4>
               <div id="collapsefour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
                   <p>Depende del caso. Un atraso tributario o una anotación no te descartan automáticamente: evaluamos tu situación completa y también la de tus deudores. Conversa con un ejecutivo para revisar tu caso puntual.</p>
@@ -505,11 +504,11 @@
               </div>
             </div>
             <div class="accordion-item">
-              <h2 class="accordion-header">
+              <h4 class="accordion-header">
                 <button class="accordion-button collapsed" type="button" data-evento="faq-deuda" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
                   ¿El factoring aparece como deuda en mi empresa?
                 </button>
-              </h2>
+              </h4>
               <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
                   <p>El factoring no es un crédito bancario. Anticipa dinero de facturas que tu empresa ya emitió, por lo que no consume tus líneas de crédito ni agrega deuda financiera nueva.</p>
@@ -553,10 +552,9 @@
           <div class="col-12 col-lg-3 order-1 order-lg-2 text-center text-lg-start menu-ft">
             <h5>Informaciones <br><img src="imagenes/Rectangle.png" class="img-fluid mb-3" alt=""></h5>
             <ul>
-              <li><a href="como-factorizar-paso-a-paso.html">Cómo ceder tus facturas</a></li>
               <li><a href="politicas-privacidad.html">Política de privacidad</a></li>
               <li><a href="politica-editorial.html">Política editorial</a></li>
-              <li><a href="canal-denuncias.html">Canal de Denuncias</a></li>
+              <li><a href="canal-denuncias.html">Canal de denuncias</a></li>
               <li><a href="centro-ayuda.html">Centro de ayuda</a></li>
               <li><a href="#" data-bs-toggle="modal" data-bs-target="#modalHazteCliente" data-evento="footer-hazte-cliente">Hazte cliente</a></li>
             </ul>
@@ -568,7 +566,7 @@
             <a href="mailto:contacto@financiacapital.cl">contacto@financiacapital.cl</a>
             <p>Lunes a viernes, de 9:00 a 17:30</p>
             <h5>Oficina<br><img src="imagenes/Rectangle.png" class="img-fluid" alt=""></h5>
-            <p>Financia Capital<br>Manquehue Norte 160, piso 14, Las Condes.</p>
+            <p>Financia Capital<br>Av. Manquehue Nte. 160, Ofi 141, Las Condes, Región Metropolitana</p>
           </div>
         </div>
       </div>
