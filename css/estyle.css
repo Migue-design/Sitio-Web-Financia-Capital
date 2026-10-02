@@ -126,7 +126,7 @@ p {
   }
 }
 @media (max-width: 767.98px) {
-  .navbar-brand img.d-lg-none {
+  .navbar-brand img.d-xl-none {
     width: 120px;
   }
 }
@@ -876,7 +876,7 @@ p {
     margin-top: 130px;
   }
 }
-@media (max-width: 991.98px) {
+@media (max-width: 1199.98px) {
   .navbar .nav-item .active {
     border-right: 3px solid #E9540D;
     padding-right: 7px;
@@ -886,17 +886,6 @@ p {
   .container-lg, .container-md, .container-sm, .container {
     max-width: 960px;
   }
-  .navbar .nav-link {
-  color: #fff;
-  border-bottom: none;
-  padding: 7px 0;
-}
-.navbar .nav-link:hover {
-  border-bottom: 3px solid #E9540D;
-}
-.navbar .nav-item .active {
-  border-bottom: 3px solid #E9540D;
-}
   .box-banner {
     max-width: none;
     margin-left: 0;
@@ -935,6 +924,17 @@ p {
   .container-xl, .container-lg, .container-md, .container-sm, .container {
     max-width: 1140px;
   }
+  .navbar .nav-link {
+  color: #fff;
+  border-bottom: none;
+  padding: 7px 0;
+}
+.navbar .nav-link:hover {
+  border-bottom: 3px solid #E9540D;
+}
+.navbar .nav-item .active {
+  border-bottom: 3px solid #E9540D;
+}
   .subtitulo {
     display: block;
   }
@@ -2631,8 +2631,8 @@ p {
   text-decoration: underline;
 }
 
-/* Menú móvil (sidebar): logo con "Menú" debajo, y los CTAs con el mismo estilo que en escritorio */
-@media (max-width: 991.98px) {
+/* Menú móvil (sidebar, hasta 1199px): logo con "Menú" debajo, y los CTAs con el mismo estilo que en escritorio */
+@media (max-width: 1199.98px) {
   /* Logo del sidebar: mismo tamaño y posición que el logo del navbar móvil (120px, a 12px del borde y 15px arriba) */
   .navbar .offcanvas-header {
     padding: 15px 12px 15px 11px; /* 11px + 1px del borde del panel = 12px, igual que el navbar */
@@ -2646,7 +2646,7 @@ p {
     width: 120px;
   }
 }
-@media (min-width: 768px) and (max-width: 991.98px) {
+@media (min-width: 768px) and (max-width: 1199.98px) {
   /* Desde 768px el logo del navbar mide 150px y queda a 13px del borde superior */
   .navbar .offcanvas-header {
     padding-top: 13px;
@@ -2655,7 +2655,7 @@ p {
     width: 150px;
   }
 }
-@media (max-width: 991.98px) {
+@media (max-width: 1199.98px) {
   .navbar .nav-item-cta {
     margin-top: 1.75rem;
   }
@@ -2694,9 +2694,9 @@ p {
   }
 }
 
-/* Navbar escritorio: links centrados y CTAs destacados a la derecha */
-@media (min-width: 992px) {
-  .navbar .offcanvas-lg .offcanvas-body {
+/* Navbar escritorio (desde 1200px): links centrados y CTAs destacados a la derecha */
+@media (min-width: 1200px) {
+  .navbar .offcanvas-xl .offcanvas-body {
     flex-grow: 1;
   }
   .navbar-nav-principal {
