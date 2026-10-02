@@ -1,4 +1,4 @@
-// Formulario del modal "Hazte cliente": regiones/comunas, validación y envío.
+// Formulario de la página "Hazte cliente": regiones/comunas, validación y envío.
 (function () {
   var form = document.getElementById('hazte-cliente-form');
   if (!form) return;
@@ -27,7 +27,7 @@
   var comuna = form.elements.comuna;
   var rut = form.elements.rut;
   var telefono = form.elements.telefono;
-  var feedback = form.querySelector('.modal-hazte-cliente__feedback');
+  var feedback = form.querySelector('.hazte-cliente__feedback');
 
   REGIONES.forEach(function (r, i) {
     region.add(new Option(r.nombre, r.nombre));
@@ -47,9 +47,30 @@
     comuna.disabled = false;
   });
 
+  // Si no es el representante legal, se pide el nombre del representante.
+  var esRepresentante = form.elements.representante_legal;
+  var representanteNombre = form.elements.representante_nombre;
+  var representanteCampo = document.getElementById('hc-representante-campo');
+  function actualizarRepresentante() {
+    var pedir = !esRepresentante.checked;
+    representanteCampo.hidden = !pedir;
+    representanteNombre.disabled = !pedir;
+    representanteNombre.required = pedir;
+    if (!pedir) {
+      representanteNombre.value = '';
+      representanteNombre.removeAttribute('aria-invalid');
+      document.getElementById('hc-error-representante_nombre').textContent = '';
+    }
+  }
+  esRepresentante.addEventListener('change', function () {
+    actualizarRepresentante();
+    if (!esRepresentante.checked) representanteNombre.focus();
+  });
+  actualizarRepresentante();
+
   // RUT: cuerpo numérico + dígito verificador (módulo 11).
   function limpiarRut(valor) {
-    return valor.replace(/[^0-9kK]/g, '').toUpperCase();
+    return valor.replace(/[^0-9kK]/g, '').toUpperCase().slice(0, 9);
   }
   function rutValido(valor) {
     var limpio = limpiarRut(valor);
@@ -79,16 +100,26 @@
     if (digitos.length === 11 && digitos.indexOf('56') === 0) digitos = digitos.slice(2);
     return /^[2-9]\d{8}$/.test(digitos);
   }
+  // Formato único para guardar: +56 seguido de los 9 dígitos.
+  function normalizarTelefono(valor) {
+    var digitos = valor.replace(/\D/g, '');
+    if (digitos.length === 11 && digitos.indexOf('56') === 0) digitos = digitos.slice(2);
+    return '+56' + digitos;
+  }
 
   var correoRe = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
+  // En el mismo orden del formulario: al enviar, el foco va al primer campo con error.
+  // Ciudad es opcional y no se valida.
   var VALIDADORES = {
-    nombre: function (v) { return v.trim().length >= 2 || 'Ingresa tu nombre.'; },
-    rut: function (v) { return rutValido(v) || 'Ingresa un RUT válido (ej: 76.123.456-7).'; },
-    correo: function (v) { return correoRe.test(v.trim()) || 'Ingresa un correo válido.'; },
+    rut: function (v) { return rutValido(v) || 'Ingresa un RUT válido (ej: 76.197.101-8).'; },
+    nombre: function (v) { return v.trim().length >= 2 || 'Ingresa tu nombre y apellido.'; },
+    representante_nombre: function (v) { return esRepresentante.checked || v.trim().length >= 2 || 'Ingresa el nombre del representante legal.'; },
+    correo: function (v) { return correoRe.test(v.trim()) || 'Ingresa un correo válido (ej: nombre@empresa.cl).'; },
     telefono: function (v) { return telefonoValido(v) || 'Ingresa un teléfono de 9 dígitos (ej: +56 9 1234 5678).'; },
-    region: function (v) { return !!v || 'Selecciona una región.'; },
-    comuna: function (v) { return !!v || 'Selecciona una comuna.'; },
+    direccion: function (v) { return v.trim().length >= 3 || 'Ingresa la calle y el número.'; },
+    region: function (v) { return !!v || 'Selecciona tu región.'; },
+    comuna: function (v) { return !!v || 'Selecciona tu comuna.'; },
     consentimiento: function (v, el) { return el.checked || 'Debes aceptar el uso de tus datos para continuar.'; }
   };
 
@@ -102,8 +133,20 @@
     return ok;
   }
 
-  rut.addEventListener('blur', function () {
-    if (rut.value.trim()) rut.value = formatearRut(rut.value);
+  // Formato automático mientras se escribe (76.197.101-8), manteniendo el cursor
+  // detrás del mismo carácter aunque se agreguen o quiten puntos y guion.
+  rut.addEventListener('input', function () {
+    var cursor = rut.selectionStart;
+    var significativos = limpiarRut(rut.value.slice(0, cursor)).length;
+    var formateado = formatearRut(rut.value);
+    rut.value = formateado;
+    var pos = 0;
+    var contados = 0;
+    while (pos < formateado.length && contados < significativos) {
+      if (/[0-9K]/.test(formateado[pos])) contados++;
+      pos++;
+    }
+    rut.setSelectionRange(pos, pos);
   });
 
   // Tras el primer intento de envío, revalida cada campo mientras se corrige.
@@ -132,13 +175,29 @@
       return;
     }
 
-    // TODO: conectar con el endpoint real de envío.
+    // Datos listos para enviar: RUT con formato y teléfono normalizado.
+    var datos = {
+      rut: formatearRut(rut.value),
+      nombre: form.elements.nombre.value.trim(),
+      representante_legal: esRepresentante.checked,
+      representante_nombre: esRepresentante.checked ? form.elements.nombre.value.trim() : representanteNombre.value.trim(),
+      correo: form.elements.correo.value.trim(),
+      telefono: normalizarTelefono(telefono.value),
+      direccion: form.elements.direccion.value.trim(),
+      region: region.value,
+      comuna: comuna.value,
+      ciudad: form.elements.ciudad.value.trim(),
+      consentimiento: true
+    };
+    // TODO: conectar con el endpoint real de envío (POST de `datos`).
+    void datos;
     feedback.textContent = 'Listo, recibimos tu solicitud. Un ejecutivo te contactará a la brevedad.';
     feedback.classList.remove('d-none');
     feedback.classList.add('alert-success');
     form.reset();
     comuna.length = 1;
     comuna.disabled = true;
+    actualizarRepresentante();
     delete form.dataset.intentado;
     Array.prototype.forEach.call(form.querySelectorAll('[aria-invalid]'), function (el) {
       el.removeAttribute('aria-invalid');

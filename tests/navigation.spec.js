@@ -7,7 +7,8 @@ const PAGES = [
   'novedades.html',
   'novedad-detalle.html',
   'simular.html',
-  'centro-ayuda.html'
+  'centro-ayuda.html',
+  'hazte-cliente.html'
 ];
 
 test.describe('Navegación', () => {

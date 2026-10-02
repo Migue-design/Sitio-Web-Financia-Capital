@@ -156,13 +156,14 @@ p {
   outline: 0;
   box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.25);
 }
+/* Ícono "Hazte cliente" del navbar móvil: persona con "+" (lucide user-plus) */
 .navbar-mail-btn__icon {
   display: inline-block;
   width: 1.4em;
   height: 1.4em;
   background-color: #fff;
-  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm0 2v.01L12 13l8-6.99V6H4Zm16 2.24-7.4 6.47a1 1 0 0 1-1.2 0L4 8.24V18h16V8.24Z'/%3E%3C/svg%3E") center / contain no-repeat;
-  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm0 2v.01L12 13l8-6.99V6H4Zm16 2.24-7.4 6.47a1 1 0 0 1-1.2 0L4 8.24V18h16V8.24Z'/%3E%3C/svg%3E") center / contain no-repeat;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2'/%3E%3Ccircle cx='9' cy='7' r='4'/%3E%3Cpath d='M19 8v6M22 11h-6'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2'/%3E%3Ccircle cx='9' cy='7' r='4'/%3E%3Cpath d='M19 8v6M22 11h-6'/%3E%3C/svg%3E") center / contain no-repeat;
 }
 .navbar {
   position: fixed;
@@ -1369,24 +1370,6 @@ p {
     height: 23px;
   }
 }
-.modal-hazte-cliente .modal-dialog {
-  max-width: 480px;
-}
-.modal-hazte-cliente .modal-content {
-  background-color: #19233E;
-  color: #fff;
-  border: none;
-  border-radius: 20px;
-  position: relative;
-  max-height: min(90vh, 700px);
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-}
-.modal-hazte-cliente .modal-body {
-  overflow-y: auto;
-  padding: clamp(1.75rem, 1.5rem + 1vw, 2.5rem);
-}
 .modal-hazte-cliente__close {
   position: absolute;
   top: 1.25rem;
@@ -1410,89 +1393,12 @@ p {
   background-color: rgba(255, 255, 255, 0.3);
 }
 @media (max-width: 575.98px) {
-  .modal-hazte-cliente .modal-content {
-    border-radius: 0;
-    max-height: 100%;
-    height: 100%;
-  }
-  .modal-hazte-cliente .modal-body {
-    padding: 1.5rem 1.25rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
   .modal-hazte-cliente__close {
     top: 1rem;
     right: 1rem;
     width: 40px;
     height: 40px;
   }
-}
-.modal-hazte-cliente__title {
-  font-size: 1.4rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  padding-right: 2rem;
-}
-.modal-hazte-cliente__title img {
-  width: 14px;
-  margin-right: 0.35rem;
-  margin-bottom: 3px;
-}
-.modal-hazte-cliente__subtitle {
-  font-family: "Inter", Arial, Helvetica, sans-serif;
-  color: rgba(255, 255, 255, 0.75);
-  font-size: 0.9rem;
-  margin-bottom: 1.5rem;
-}
-.modal-hazte-cliente__input {
-  display: block;
-  width: 100%;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 10px;
-  padding: 0.75rem 1rem;
-  font-family: "Inter", Arial, Helvetica, sans-serif;
-  font-size: 0.95rem;
-  color: #19233E;
-  background-color: #fff;
-}
-.modal-hazte-cliente__input:focus {
-  outline: none;
-  border-color: #E9540D;
-  box-shadow: 0 0 0 3px rgba(233, 84, 13, 0.2);
-}
-.modal-hazte-cliente__textarea {
-  min-height: 90px;
-  resize: vertical;
-}
-.modal-hazte-cliente__feedback.alert-success {
-  background-color: rgba(255, 255, 255, 0.12);
-  border: none;
-  color: #fff;
-  padding: 0.6rem 0.9rem;
-  font-size: 0.85rem;
-  border-radius: 8px;
-}
-.modal-hazte-cliente__submit {
-  width: 100%;
-  border: none;
-  border-radius: 10px;
-  background-color: #E9540D;
-  color: #fff;
-  font-weight: 700;
-  padding: 0.85rem;
-  font-size: 1rem;
-  transition: 0.15s;
-}
-.modal-hazte-cliente__submit:hover {
-  background-color: #bf3f04;
-}
-.modal-hazte-cliente__nota {
-  text-align: center;
-  font-family: "Inter", Arial, Helvetica, sans-serif;
-  font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.6);
-  margin: 1.25rem 0 0;
 }
 .timeline-mobile {
   margin-top: 30px;
@@ -3025,131 +2931,136 @@ p {
   }
 }
 
-/* Modal Hazte cliente: formulario "Regístrate" de 8 campos + pasos siguientes */
-.modal-hazte-cliente .modal-dialog {
-  max-width: 640px;
-}
-.modal-hazte-cliente .modal-content {
-  max-height: 90vh;
-}
-@media (max-width: 575.98px) {
-  .modal-hazte-cliente .modal-content {
-    max-height: 100%;
-  }
-  /* El contenido es más alto que la pantalla: centrarlo cortaría el inicio. */
-  .modal-hazte-cliente .modal-body {
-    justify-content: flex-start;
-  }
-}
-.modal-hazte-cliente__form-title {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 1rem;
-}
-.modal-hazte-cliente__label {
+/* Hazte cliente: formulario en la card blanca del panel (mismo estilo del simulador) y pasos en la card azul */
+.hazte-cliente__label {
   display: block;
-  font-family: "Inter", Arial, Helvetica, sans-serif;
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.85);
-  margin-bottom: 0.3rem;
+  font-weight: 450;
+  color: #19233E;
+  margin-bottom: 0.4rem;
 }
-select.modal-hazte-cliente__input {
+.hazte-cliente__input {
+  font-size: 1rem;
+  font-weight: 500;
+}
+.hazte-cliente__input::placeholder {
+  color: #8A93A6;
+  font-weight: 400;
+}
+select.hazte-cliente__input {
   padding-right: 2.5rem;
+  background-color: #F1F3F7;
   background-position: right 1rem center;
+  box-shadow: none;
 }
-select.modal-hazte-cliente__input:disabled {
-  background-color: #E0E5ED;
-  color: #5E5E5E;
+select.hazte-cliente__input:disabled {
+  background-color: #F1F3F7;
+  opacity: 0.55;
   cursor: not-allowed;
 }
-.modal-hazte-cliente__input[aria-invalid="true"] {
-  border-color: #FF8A8A;
-  box-shadow: 0 0 0 2px rgba(255, 138, 138, 0.35);
+.hazte-cliente__input[aria-invalid="true"] {
+  outline: 2px solid #D93025;
+  outline-offset: 1px;
 }
-.modal-hazte-cliente__error {
+.hazte-cliente__error {
   font-family: "Inter", Arial, Helvetica, sans-serif;
-  font-size: 0.78rem;
-  color: #FFB3B3;
-  margin: 0.3rem 0 0;
+  font-size: 0.8rem;
+  color: #D93025;
+  margin: 0.4rem 0 0;
 }
-.modal-hazte-cliente__error:empty {
+.hazte-cliente__error:empty {
   display: none;
 }
-.modal-hazte-cliente__check {
+.hazte-cliente__check {
   font-family: "Inter", Arial, Helvetica, sans-serif;
   font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.45;
+  color: #5E5E5E;
   margin-bottom: 0.5rem;
 }
-.modal-hazte-cliente__check .form-check-input {
-  border-color: rgba(255, 255, 255, 0.5);
-}
-.modal-hazte-cliente__check .form-check-input:checked {
+.hazte-cliente__check .form-check-input:checked {
   background-color: #E9540D;
   border-color: #E9540D;
 }
-.modal-hazte-cliente__check .form-check-input[aria-invalid="true"] {
-  border-color: #FF8A8A;
+.hazte-cliente__check .form-check-input[aria-invalid="true"] {
+  border-color: #D93025;
 }
-.modal-hazte-cliente__check a {
-  color: #fff;
+.hazte-cliente__check a {
+  color: #19233E;
   text-decoration: underline;
   text-underline-offset: 2px;
 }
-.modal-hazte-cliente__check a:hover {
+.hazte-cliente__check a:hover {
   color: #E9540D;
 }
-#hazte-cliente-form .modal-hazte-cliente__feedback {
+.hazte-cliente__feedback {
   margin: 1rem 0 0;
 }
-#hazte-cliente-form .modal-hazte-cliente__submit {
-  margin-top: 1.25rem;
-  border-radius: 40px;
+.hazte-cliente__feedback.alert-success {
+  background-color: #E6F4EA;
+  border: none;
+  color: #1E6B34;
+  font-size: 0.9rem;
+  border-radius: 12px;
 }
-.modal-hazte-cliente__pasos {
-  margin-top: 2rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
+.hazte-cliente__submit {
+  margin-top: 1.5rem;
 }
-.modal-hazte-cliente__pasos ol {
+.hazte-cliente__pasos {
   list-style: none;
   counter-reset: paso;
   padding: 0;
   margin: 0;
   font-family: "Inter", Arial, Helvetica, sans-serif;
-  font-size: 0.88rem;
+  font-size: 0.95rem;
   line-height: 1.5;
   color: rgba(255, 255, 255, 0.8);
 }
-.modal-hazte-cliente__pasos li {
+.hazte-cliente__pasos li {
   counter-increment: paso;
   position: relative;
-  padding-left: 2.25rem;
-  margin-bottom: 0.85rem;
+  padding: 0 0 1.25rem 2.75rem;
 }
-.modal-hazte-cliente__pasos li:last-child {
-  margin-bottom: 0;
+.hazte-cliente__pasos li:last-child {
+  padding-bottom: 0;
 }
-.modal-hazte-cliente__pasos li::before {
+/* Línea que une los números de cada paso */
+.hazte-cliente__pasos li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 0.9rem;
+  top: 2rem;
+  bottom: 0.25rem;
+  width: 1px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.hazte-cliente__pasos li::before {
   content: counter(paso);
   position: absolute;
   left: 0;
   top: 0;
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1.8rem;
+  height: 1.8rem;
   border-radius: 50%;
-  background-color: #E9540D;
+  background-color: #596A7F;
   color: #fff;
   font-weight: 700;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.modal-hazte-cliente__pasos strong {
+.hazte-cliente__pasos strong {
+  display: block;
   color: #fff;
+}
+/* En el panel la card del formulario es más ancha que la de los pasos */
+@media (min-width: 992px) {
+  .hazte-cliente-section .simulador-form {
+    flex: 3 1 0;
+  }
+  .hazte-cliente-section .simulador-resultado {
+    flex: 2 1 0;
+  }
 }
 /* Footer escritorio: Conocenos e Informaciones más a la derecha (Canales de atención no se mueve) */
 @media (min-width: 992px) {
@@ -3539,5 +3450,27 @@ select.modal-hazte-cliente__input:disabled {
   .beneficios.respaldo__lista {
     margin-left: auto;
     margin-right: auto;
+  }
+}
+.hazte-cliente__opcional {
+  color: #8A93A6;
+  font-size: 0.85em;
+}
+/* Hazte cliente: hero con textos centrados y formulario pegado al hero (sin título de sección) */
+.hero-content--centrado .box-text {
+  margin-left: auto;
+  margin-right: auto;
+}
+.hazte-cliente-section {
+  padding-top: clamp(1rem, 0.75rem + 1vw, 1.5rem);
+}
+.hazte-cliente-section .simulador-panel {
+  margin-top: 0;
+}
+/* Hazte cliente, tablet: formulario y pasos apilados para que los campos en dos columnas no queden apretados */
+@media (max-width: 991.98px) {
+  .hazte-cliente-section .simulador-form,
+  .hazte-cliente-section .simulador-resultado {
+    flex-basis: 100%;
   }
 }
