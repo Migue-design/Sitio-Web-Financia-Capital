@@ -3551,6 +3551,10 @@ select.hazte-cliente__input:disabled {
 .respaldo h2 {
   line-height: 1.2;
 }
+.respaldo__img {
+  width: 100%;
+  max-width: 666px; /* mismo ancho máximo que la imagen anterior (666px de ancho natural) */
+}
 @media (max-width: 767.98px) {
   .beneficios.respaldo__lista {
     margin-left: auto;
