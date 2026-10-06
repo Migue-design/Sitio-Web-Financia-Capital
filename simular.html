@@ -257,7 +257,7 @@
               <input type="text" inputmode="numeric" id="simuladorValor" class="simulador-input" placeholder="$10.000.000" autocomplete="off" disabled>
             </div>
 
-            <div class="simulador-field">
+            <div class="simulador-field mb-0">
               <label id="simuladorDiasLabel">Días para el pago</label>
               <div class="simulador-dias" role="group" aria-labelledby="simuladorDiasLabel">
                 <button type="button" class="active" data-dias="30" aria-pressed="true" disabled>30 días</button>
@@ -266,17 +266,6 @@
               </div>
             </div>
 
-            <div class="simulador-field mb-0">
-              <div class="simulador-slider-row">
-                <label for="simuladorTasa" class="mb-0">Tasa propuesta (%)</label>
-                <span class="simulador-slider-value"><span id="simuladorTasaValor">2,5</span> %</span>
-              </div>
-              <input type="range" id="simuladorTasa" class="simulador-slider" min="1" max="5" step="0.1" value="2.5" aria-describedby="simuladorTasaValor" disabled>
-              <div class="simulador-slider-minmax">
-                <span>1 %</span>
-                <span>5 %</span>
-              </div>
-            </div>
           </div>
 
           <!--Resultado-->
@@ -294,10 +283,6 @@
               <span class="label" id="resDescuentoLabel">Descuento (30 días)</span>
               <span class="value" id="resDescuento">-$0</span>
             </div>
-            <div class="simulador-resultado__row comision">
-              <span class="label">Comisión (0,3 %)</span>
-              <span class="value" id="resComision">-$0</span>
-            </div>
 
             <div class="simulador-resultado__highlight">
               <div class="label"><svg class="simulador-label-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Monto estimado a recibir</div>
@@ -305,7 +290,7 @@
             </div>
 
             <a
-              href="https://wa.me/56997974079?text=Hola%20Financia%20Capital%2C%20quiero%20solicitar%20un%20adelanto%20de%20factura"
+              href="https://wa.me/56997974079?text=Hola%20Financia%20Capital%2C%20us%C3%A9%20el%20simulador%20y%20me%20gustar%C3%ADa%20que%20eval%C3%BAen%20mi%20empresa%20para%20adelantar%20mis%20facturas."
               class="simulador-cta"
               id="simuladorCta"
               data-evento="whatsapp-simulador"
@@ -482,17 +467,14 @@
         var checkConsentimiento = document.getElementById('simuladorConsentimiento');
         var inputValor = document.getElementById('simuladorValor');
         var botonesDias = document.querySelectorAll('.simulador-dias button');
-        var sliderTasa = document.getElementById('simuladorTasa');
-        var tasaValor = document.getElementById('simuladorTasaValor');
         var resValor = document.getElementById('resValor');
         var resDescuentoLabel = document.getElementById('resDescuentoLabel');
         var resDescuento = document.getElementById('resDescuento');
-        var resComision = document.getElementById('resComision');
         var resNeto = document.getElementById('resNeto');
         var cta = document.getElementById('simuladorCta');
         if (!inputCorreo || !checkConsentimiento || !inputValor || !cta) return;
 
-        var COMISION_PCT = 0.003; // 0.3%, fija
+        var TASA_MENSUAL_PCT = 2.5; // tasa mensual fija de la simulación (el usuario ya no la elige)
         var diasSeleccionados = 30;
         var desbloqueado = null;
 
@@ -506,7 +488,6 @@
           desbloqueado = valido;
 
           inputValor.disabled = !valido;
-          sliderTasa.disabled = !valido;
           botonesDias.forEach(function (btn) { btn.disabled = !valido; });
 
           if (valido) recalcular();
@@ -523,28 +504,22 @@
 
         function recalcular() {
           var valor = parseValor(inputValor.value);
-          var tasaMensual = parseFloat(sliderTasa.value);
-          tasaValor.textContent = tasaMensual.toFixed(1).replace('.', ','); // decimal con coma (es-CL)
-
-          var descuento = valor * (tasaMensual / 100) * (diasSeleccionados / 30);
-          var comision = valor * COMISION_PCT;
-          var neto = Math.max(valor - descuento - comision, 0);
+          var descuento = valor * (TASA_MENSUAL_PCT / 100) * (diasSeleccionados / 30);
+          var neto = Math.max(valor - descuento, 0);
 
           resValor.textContent = formatoCLP(valor);
           resDescuentoLabel.textContent = 'Descuento (' + diasSeleccionados + ' días)';
           resDescuento.textContent = '-' + formatoCLP(descuento);
-          resComision.textContent = '-' + formatoCLP(comision);
           resNeto.textContent = formatoCLP(neto);
 
-          var mensaje = 'Hola Financia Capital, simulé el adelanto de una factura de '
-            + formatoCLP(valor) + ' a ' + diasSeleccionados + ' días. '
-            + 'El monto estimado a recibir es ' + formatoCLP(neto) + '. '
-            + (correoValido() ? 'Mi correo es ' + inputCorreo.value.trim() + '. ' : '')
-            + 'Quisiera más información para solicitarlo.';
+          // Mensaje genérico: pide una evaluación, sin los montos de la simulación.
+          var mensaje = 'Hola Financia Capital, usé el simulador y me gustaría que evalúen mi empresa para adelantar mis facturas.'
+            + (correoValido() ? ' Mi correo es ' + inputCorreo.value.trim() + '.' : '');
           cta.href = 'https://wa.me/56997974079?text=' + encodeURIComponent(mensaje);
         }
 
         inputCorreo.addEventListener('input', actualizarBloqueo);
+        inputCorreo.addEventListener('input', recalcular); // mantiene al día el correo del mensaje de WhatsApp
         inputCorreo.addEventListener('blur', actualizarBloqueo);
 
         // "Solicitar adelanto" requiere el consentimiento de uso de datos.
@@ -581,8 +556,6 @@
             recalcular();
           });
         });
-
-        sliderTasa.addEventListener('input', recalcular);
 
         actualizarBloqueo();
         recalcular();

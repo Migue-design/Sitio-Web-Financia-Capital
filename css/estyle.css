@@ -2071,8 +2071,7 @@ p {
 .simulador-resultado__row:first-of-type .value {
   font-size: 2rem;
 }
-.simulador-resultado__row.descuento .value,
-.simulador-resultado__row.comision .value {
+.simulador-resultado__row.descuento .value {
   color: #ff8f66;
   font-weight: 650;
 }
