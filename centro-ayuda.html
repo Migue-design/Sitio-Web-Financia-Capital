@@ -202,7 +202,11 @@
 
     <main>
     <!--Hero-->
-    <section class="ayuda-hero" aria-label="Centro de ayuda">
+    <section class="ayuda-hero ayuda-hero--video" aria-label="Centro de ayuda">
+      <!-- Video provisorio (mismo del Home); se reemplazará por uno propio de esta página. -->
+      <video class="hero-content__video" autoplay muted loop playsinline preload="auto" poster="imagenes/hero-home-poster.jpg" aria-hidden="true">
+        <source src="videos/Video-hero-home.webm" type="video/webm">
+      </video>
       <div class="container">
         <nav class="hero-breadcrumb text-center text-md-start" aria-label="Miga de pan">
           <a href="index.html">Inicio</a> / <span aria-current="page">Centro de ayuda</span>

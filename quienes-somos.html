@@ -258,103 +258,72 @@
             <h4>Más de 15 años fortaleciendo a las PyMEs chilenas.</h4>
           </div>
         </div>
-        <!--Móvil: imagen a la izquierda, textos a la derecha-->
-        <div class="row d-lg-none timeline-mobile">
-          <div class="col-3 timeline-mobile__col-img">
-            <img src="imagenes/time-line.png" class="timeline-mobile__img" alt="" aria-hidden="true" loading="lazy">
-          </div>
-          <div class="col-9">
-            <div class="pb-4 pt-3">
-              <h5 class="text-naranjo">2011</h5>
-              <h3>Creación de Financia Capital.</h3>
+        <!--Línea de tiempo en HTML/CSS: móvil con nodos a la izquierda, desktop en zigzag-->
+        <ol class="timeline">
+          <li class="timeline__item">
+            <span class="timeline__nodo timeline__nodo--azul" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4M10 10h4M10 14h4M10 18h4"/></svg>
+            </span>
+            <div class="timeline__contenido">
+              <time class="timeline__anio" datetime="2011">2011</time>
+              <h3 class="timeline__texto">Creación de Financia Capital.</h3>
             </div>
-            <div class="pb-4">
-              <h5 class="text-naranjo">2015</h5>
-              <h3>Primera clasificación de riesgo: BB+ (Feller Rate).</h3>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__nodo timeline__nodo--azul-secundario" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M8.21 13.89 7 23l5-3 5 3-1.21-9.12"/></svg>
+            </span>
+            <div class="timeline__contenido">
+              <time class="timeline__anio" datetime="2015">2015</time>
+              <h3 class="timeline__texto">Primera clasificación de riesgo: BB+ (Feller Rate).</h3>
             </div>
-            <div class="pb-4">
-              <h5 class="text-naranjo">2016</h5>
-              <h3>Aumento de capital y mejora de clasificación a BBB- (Feller Rate).</h3>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__nodo timeline__nodo--celeste" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M23 6l-9.5 9.5-5-5L1 18"/><path d="M17 6h6v6"/></svg>
+            </span>
+            <div class="timeline__contenido">
+              <time class="timeline__anio" datetime="2016">2016</time>
+              <h3 class="timeline__texto">Aumento de capital y mejora de clasificación a BBB- (Feller Rate).</h3>
             </div>
-            <div class="pb-4">
-              <h5 class="text-naranjo">2019</h5>
-              <h3>Clasificación BBB (Humphreys) y BBB- con perspectiva positiva (Feller Rate). Expansión de operaciones a nivel nacional.</h3>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__nodo timeline__nodo--naranjo" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </span>
+            <div class="timeline__contenido">
+              <time class="timeline__anio" datetime="2019">2019</time>
+              <h3 class="timeline__texto">Clasificación BBB (Humphreys) y BBB- con perspectiva positiva (Feller Rate). Expansión de operaciones a nivel nacional.</h3>
             </div>
-            <div class="pb-4">
-              <h5 class="text-naranjo">2023</h5>
-              <h3>Mejora de clasificación a BBB (Feller Rate) y nuevo aumento de capital.</h3>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__nodo timeline__nodo--azul-secundario" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6"/><path d="M18.09 10.37A6 6 0 1 1 10.34 18"/><path d="M7 6h1v4"/><path d="m16.71 13.88.7.71-2.82 2.82"/></svg>
+            </span>
+            <div class="timeline__contenido">
+              <time class="timeline__anio" datetime="2023">2023</time>
+              <h3 class="timeline__texto">Mejora de clasificación a BBB (Feller Rate) y nuevo aumento de capital.</h3>
             </div>
-            <div class="pb-4">
-              <h5 class="text-naranjo">2025</h5>
-              <h3>La CMF autoriza la Línea de Efectos de Comercio N°166 y se realiza la primera colocación de efectos de comercio.</h3>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__nodo timeline__nodo--celeste" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="m9 15 2 2 4-4"/></svg>
+            </span>
+            <div class="timeline__contenido">
+              <time class="timeline__anio" datetime="2025">2025</time>
+              <h3 class="timeline__texto">La CMF autoriza la Línea de Efectos de Comercio N°166 y se realiza la primera colocación de efectos de comercio.</h3>
             </div>
-            <div class="pb-4">
-              <h5 class="text-naranjo">2026</h5>
-              <h3>Feller Rate sube la clasificación a BBB+ con perspectivas estables.</h3>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__nodo timeline__nodo--azul" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="currentColor"/></svg>
+            </span>
+            <div class="timeline__contenido">
+              <time class="timeline__anio" datetime="2026">2026</time>
+              <h3 class="timeline__texto">Feller Rate sube la clasificación a BBB+ con perspectivas estables.</h3>
             </div>
-          </div>
-        </div>
-        <!--Fin móvil-->
-
-        <!--Desktop: zigzag-->
-        <div class="row d-none d-lg-flex">
-          <div class="col-lg-2"></div>
-          <div class="col-lg-3 pt-lg-5">
-            <div class="pb-4 pt-5">
-              <h5 class="text-naranjo">2011</h5>
-              <h4>Creación de Financia Capital.</h4>
-              <!--<p>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó.</p>-->
-            </div>
-            <div class="d-none d-lg-block timeline-box">
-            </div>
-            <div class="pb-4">
-              <h5 class="text-naranjo">2016</h5>
-              <h4>Aumento de capital y mejora de clasificación a BBB- (Feller Rate).</h4>
-              <!--<p>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó.</p>-->
-            </div>
-            <div class="d-none d-lg-block timeline-box">
-            </div>
-            <div class="pb-4">
-              <h5 class="text-naranjo">2023</h5>
-              <h4>Mejora de clasificación a BBB (Feller Rate) y nuevo aumento de capital.</h4>
-              <!--<p>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó.</p>-->
-            </div>
-            <div class="d-none d-lg-block timeline-box">
-            </div>
-            <div class="pb-4">
-              <h5 class="text-naranjo">2026</h5>
-              <h4>Feller Rate sube la clasificación a BBB+ con perspectivas estables.</h4>
-              <!--<p>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó.</p>-->
-            </div>
-          </div>
-          <div class="col-lg-2 pt-5 d-none d-lg-block">
-            <img src="imagenes/time-line.png" width="" class="img-fluid mx-auto d-block" alt="historia financia capital" loading="lazy">
-          </div>
-          <div class="col-lg-3 pt-lg-5">
-            <div class="d-none d-lg-block timeline-box">
-            </div>
-            <div class="pb-4">
-              <h5 class="text-naranjo">2015</h5>
-              <h4>Primera clasificación de riesgo: BB+ (Feller Rate).</h4>
-              <!--<p>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó.</p>-->
-            </div>
-            <div class="d-none d-lg-block timeline-box">
-            </div>
-            <div class="pb-4">
-              <h5 class="text-naranjo">2019</h5>
-              <h4>Clasificación BBB (Humphreys) y BBB- con perspectiva positiva (Feller Rate). Expansión de operaciones a nivel nacional.</h4>
-              <!--<p>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó.</p>-->
-            </div>
-             <div class="d-none d-lg-block timeline-box">
-            </div>
-            <div class="pb-4">
-              <h5 class="text-naranjo">2025</h5>
-              <h4>La CMF autoriza la Línea de Efectos de Comercio N°166 y se realiza la primera colocación de efectos de comercio.</h4>
-              <!--<p>Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó.</p>-->
-            </div>
-          </div>
-          <div class="col-lg-2"></div>
-        </div>
+          </li>
+        </ol>
       </div>
     </section>
     <!--Linea de tiempo-->

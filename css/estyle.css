@@ -540,10 +540,6 @@ p {
   font-size: 1.3em;
   line-height: 1.4em;
 }
-.timeline-box {
-  height: 60px;
-}
-
 /*Breakpoints*/
 @media (min-width: 340px) {
   .container-sm, .container {
@@ -1400,22 +1396,113 @@ p {
     height: 40px;
   }
 }
-.timeline-mobile {
-  margin-top: 30px;
+/* Quiénes somos: línea de tiempo (nodos circulares con icono sobre una línea vertical) */
+.timeline {
+  --timeline-nodo: clamp(52px, 15vw, 64px);
+  position: relative;
+  list-style: none;
+  margin: 30px 0 0;
+  padding: 0;
 }
-.timeline-mobile__col-img {
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: calc(var(--timeline-nodo) / 2);
+  bottom: 0;
+  left: calc(var(--timeline-nodo) / 2);
+  width: 10px;
+  border-radius: 5px;
+  background-color: #E4E9F5;
+  transform: translateX(-50%);
+}
+.timeline__item {
+  position: relative;
+  display: grid;
+  grid-template-columns: var(--timeline-nodo) 1fr;
+  column-gap: 1.25rem;
+  align-items: start;
+  padding-bottom: 1.75rem;
+}
+.timeline__nodo {
   display: flex;
+  align-items: center;
   justify-content: center;
-  align-items: flex-start;
+  width: var(--timeline-nodo);
+  height: var(--timeline-nodo);
+  border-radius: 50%;
+  color: #fff;
 }
-.timeline-mobile__img {
-  width: clamp(70px, 22vw, 110px);
-  height: auto;
-  margin-top: 25px;
+.timeline__nodo svg {
+  width: 42%;
+  height: 42%;
 }
-@media (min-width: 768px) and (max-width: 991.98px) {
-  .timeline-mobile__img {
-    width: clamp(70px, 15.84vw, 79.2px);
+.timeline__nodo--azul {
+  background-color: #19233E;
+}
+.timeline__nodo--azul-secundario {
+  background-color: #5268A4;
+}
+.timeline__nodo--celeste {
+  background-color: #7FCDE3;
+  color: #19233E;
+}
+.timeline__nodo--naranjo {
+  background-color: #E9540D;
+}
+/* El año (línea de 1.5rem) queda centrado en vertical con su círculo */
+.timeline__contenido {
+  padding-top: calc((var(--timeline-nodo) - 1.5rem) / 2);
+}
+.timeline__anio {
+  display: block;
+  margin-bottom: .5rem;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.5rem;
+  color: #E9540D;
+}
+.timeline__texto {
+  margin-bottom: 0;
+}
+@media (min-width: 992px) {
+  .timeline {
+    --timeline-nodo: 72px;
+    max-width: 820px;
+    margin: 3rem auto 0;
+  }
+  .timeline::before {
+    left: 50%;
+  }
+  .timeline__item {
+    grid-template-columns: 1fr var(--timeline-nodo) 1fr;
+    column-gap: 2.5rem;
+    min-height: calc(var(--timeline-nodo) + 3.5rem);
+    padding-bottom: 1rem;
+  }
+  /* Zigzag: los hitos se alternan a cada lado y se solapan en vertical */
+  .timeline__item + .timeline__item {
+    margin-top: -1.5rem;
+  }
+  .timeline__nodo {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .timeline__contenido {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .timeline__item:nth-child(even) .timeline__contenido {
+    grid-column: 3;
+  }
+  .timeline__texto {
+    font-size: calc(1.275rem + .3vw);
+    font-weight: 400;
+  }
+}
+@media (min-width: 1200px) {
+  .timeline__texto {
+    font-size: 1.5rem;
   }
 }
 .proposito-card {
@@ -2230,6 +2317,24 @@ p {
   /* Contenido centrado verticalmente: arriba = alto del navbar fijo + mismo espacio que abajo. */
   padding: calc(clamp(3.78125rem, 3.09375rem + 2.0625vw, 5.15625rem) + clamp(5rem, 4rem + 3vw, 7rem)) 0 clamp(5rem, 4rem + 3vw, 7rem);
 }
+/* Centro de ayuda: video de fondo detrás del hero. La altura sigue dada por el padding de .ayuda-hero;
+   el video (.hero-content__video, absoluto) solo cubre ese espacio y el velo degradado se mantiene encima. */
+.ayuda-hero--video {
+  overflow: hidden;
+  background: #19233E url("../imagenes/hero-home-poster.jpg") center / cover no-repeat;
+}
+.ayuda-hero--video::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(16, 23, 41, 0.35), rgba(16, 23, 41, 0.75));
+  z-index: 1;
+  pointer-events: none;
+}
+.ayuda-hero--video > .container {
+  position: relative;
+  z-index: 2;
+}
 .hero-breadcrumb {
   font-family: "Inter", Arial, Helvetica, sans-serif;
   font-size: 0.85rem;
@@ -2564,6 +2669,10 @@ p {
 @media (max-width: 1199.98px) {
   .navbar .nav-item-cta {
     margin-top: 1.75rem;
+  }
+  /* Menú lateral: línea también sobre el primer ítem (Factoring), igual a la que separa los demás */
+  .navbar .navbar-nav-principal .nav-item:first-child .nav-link {
+    border-top: 1px solid #374775;
   }
   .navbar .nav-link.nav-cta-cliente {
     display: block;
@@ -3429,10 +3538,6 @@ select.hazte-cliente__input:disabled {
     margin-left: auto;
     margin-right: auto;
   }
-}
-/* Quiénes somos: fechas de la línea de tiempo en negrita */
-.linea-tiempo h5.text-naranjo {
-  font-weight: 700;
 }
 /* Quiénes somos: "Nuestro respaldo" (imagen a la izquierda, título y lista vertical a la derecha) */
 .respaldo__link {
