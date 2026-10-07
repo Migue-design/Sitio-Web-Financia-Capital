@@ -261,32 +261,37 @@
           <!--Form mobile-->
         <div class="p-lg-5 d-block d-sm-none box-form-movil">
           <div class="form-financia p-4 p-sm-5">
-            <form id="lead-form-mobile">
+            <form id="lead-form-mobile" novalidate>
               <h2 class="mb-2 h3">
                 <img src="imagenes/isotipo-financiacapital.png" width="15" class="img-fluid pb-2" alt="">
                 Comienza a operar con nosotros
               </h2>
               <p>Completa el formulario y te contactamos a la brevedad.</p>
               <div class="form-floating mb-3">
-                <input id="name-mobile" name="name" class="form-control" maxlength="150" type="text" placeholder=" " autocomplete="name" oninput="inputName(event)">
+                <input id="name-mobile" name="name" class="form-control" maxlength="150" type="text" placeholder=" " autocomplete="name" oninput="inputName(event)" aria-describedby="lead-error-name-mobile" required>
                 <label for="name-mobile">Nombre</label>
+                <p class="lead-form__error" id="lead-error-name-mobile" aria-live="polite"></p>
               </div>
               <div class="form-floating mb-3">
-                <input id="email-mobile" name="email" class="form-control" maxlength="150" type="email" placeholder=" " autocomplete="email" oninput="inputEmail(event)">
+                <input id="email-mobile" name="email" class="form-control" maxlength="150" type="email" placeholder=" " autocomplete="email" oninput="inputEmail(event)" aria-describedby="lead-error-email-mobile" required>
                 <label for="email-mobile">Correo</label>
+                <p class="lead-form__error" id="lead-error-email-mobile" aria-live="polite"></p>
               </div>
               <div class="form-floating mb-3">
-                <input id="phone-mobile" name="phone" class="form-control" type="tel" placeholder=" " autocomplete="tel-national" oninput="inputPhone(event)">
+                <input id="phone-mobile" name="phone" class="form-control" type="tel" placeholder=" " autocomplete="tel-national" oninput="inputPhone(event)" aria-describedby="lead-error-phone-mobile" required>
                 <label for="phone-mobile">Teléfono</label>
+                <p class="lead-form__error" id="lead-error-phone-mobile" aria-live="polite"></p>
               </div>
               <div class="form-floating mb-3">
-                <input id="rut-mobile" name="rut" class="form-control" type="text" placeholder=" " autocomplete="organization" oninput="inputRut(event)">
+                <input id="rut-mobile" name="rut" class="form-control" type="text" placeholder=" " autocomplete="organization" oninput="inputRut(event)" aria-describedby="lead-error-rut-mobile" required>
                 <label for="rut-mobile">RUT empresa</label>
+                <p class="lead-form__error" id="lead-error-rut-mobile" aria-live="polite"></p>
               </div>
               <div class="form-check contacto-consentimiento mb-2">
-                <input class="form-check-input" type="checkbox" id="consentimiento-mobile" name="consentimiento" required>
+                <input class="form-check-input" type="checkbox" id="consentimiento-mobile" name="consentimiento" aria-describedby="lead-error-consentimiento-mobile" required>
                 <label class="form-check-label" for="consentimiento-mobile">Autorizo a Financia Capital a usar mis datos para contactarme y evaluar mi solicitud, según su <a href="politicas-privacidad.html">Política de privacidad</a>.</label>
               </div>
+              <p class="lead-form__error" id="lead-error-consentimiento-mobile" aria-live="polite"></p>
               <div class="alert d-none" role="alert" id="alert-mobile"></div>
               <button type="submit" class="btn btn-primary mt-3" data-evento="formulario">Enviar</button>
               <p class="text-center mt-3 mb-0">Tus datos solo se usarán para contactarte.</p>
@@ -333,32 +338,37 @@
         <!--Form desktop-->
         <div class="col-md-6 col-lg-5 pe-4 py-5 p-xxl-5 d-none d-sm-block box-form">
           <div class="form-financia sticky-lg-top sticky-md-top">
-            <form id="lead-form">
+            <form id="lead-form" novalidate>
               <h2 class="mb-3 h3">
                 <img src="imagenes/isotipo-financiacapital.png" width="15" class="img-fluid pb-2" alt="">
                 Comienza a operar con nosotros
               </h2>
               <p>Completa el formulario y te contactamos a la brevedad.</p>
               <div class="form-floating mb-3">
-                <input id="rut" name="rut" class="form-control" type="text" placeholder=" " autocomplete="organization" oninput="inputRut(event)">
+                <input id="rut" name="rut" class="form-control" type="text" placeholder=" " autocomplete="organization" oninput="inputRut(event)" aria-describedby="lead-error-rut" required>
                 <label for="rut">RUT empresa</label>
+                <p class="lead-form__error" id="lead-error-rut" aria-live="polite"></p>
               </div>
               <div class="form-floating mb-3">
-                <input id="name" name="name" class="form-control" type="text" maxlength="150" placeholder=" " autocomplete="name" oninput="inputName(event)">
+                <input id="name" name="name" class="form-control" type="text" maxlength="150" placeholder=" " autocomplete="name" oninput="inputName(event)" aria-describedby="lead-error-name" required>
                 <label for="name">Nombre</label>
+                <p class="lead-form__error" id="lead-error-name" aria-live="polite"></p>
               </div>
               <div class="form-floating mb-3">
-                <input id="email" name="email" class="form-control" type="email" maxlength="150" placeholder=" " autocomplete="email" oninput="inputEmail(event)">
+                <input id="email" name="email" class="form-control" type="email" maxlength="150" placeholder=" " autocomplete="email" oninput="inputEmail(event)" aria-describedby="lead-error-email" required>
                 <label for="email">Correo</label>
+                <p class="lead-form__error" id="lead-error-email" aria-live="polite"></p>
               </div>
               <div class="form-floating mb-3">
-                <input id="phone" name="phone" class="form-control" type="tel" placeholder=" " autocomplete="tel-national" oninput="inputPhone(event)">
+                <input id="phone" name="phone" class="form-control" type="tel" placeholder=" " autocomplete="tel-national" oninput="inputPhone(event)" aria-describedby="lead-error-phone" required>
                 <label for="phone">Teléfono</label>
+                <p class="lead-form__error" id="lead-error-phone" aria-live="polite"></p>
               </div>
               <div class="form-check contacto-consentimiento mb-2">
-                <input class="form-check-input" type="checkbox" id="consentimiento-lead" name="consentimiento" required>
+                <input class="form-check-input" type="checkbox" id="consentimiento-lead" name="consentimiento" aria-describedby="lead-error-consentimiento-lead" required>
                 <label class="form-check-label" for="consentimiento-lead">Autorizo a Financia Capital a usar mis datos para contactarme y evaluar mi solicitud, según su <a href="politicas-privacidad.html">Política de privacidad</a>.</label>
               </div>
+              <p class="lead-form__error" id="lead-error-consentimiento-lead" aria-live="polite"></p>
               <div class="alert d-none" role="alert" id="alert"></div>
               <button type="submit" class="btn btn-primary mt-lg-3" data-evento="formulario">Enviar</button>
               <p class="text-center mt-3 mb-0">Tus datos solo se usarán para contactarte.</p>
@@ -658,6 +668,7 @@
         }
       })();
     </script>
+    <script src="js/factoring-form.js"></script>
     <script src="main.js"></script>
   </body>
 </html>

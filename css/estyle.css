@@ -3038,6 +3038,38 @@ p {
     padding-left: 2.25rem; /* alinea el valor con el texto, a la derecha del ícono */
   }
 }
+/* Contacto: botón para copiar el correo, junto a la dirección */
+.contacto-correo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 0.75rem;
+}
+.contacto-copiar {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.7rem;
+  border: 1px solid #19233E;
+  border-radius: 999px;
+  background-color: transparent;
+  color: #19233E;
+  font-size: 0.8rem;
+  font-weight: 600;
+  line-height: 1.2;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+.contacto-copiar:hover,
+.contacto-copiar:focus-visible {
+  background-color: #19233E;
+  color: #fff;
+}
+.contacto-copiar.is-copiado {
+  background-color: #E6F4EA;
+  border-color: #1E6B34;
+  color: #1E6B34;
+}
 
 /* Hazte cliente: formulario en la card blanca del panel (mismo estilo del simulador) y pasos en la card azul */
 .hazte-cliente__label {
@@ -3293,6 +3325,21 @@ select.hazte-cliente__input:disabled {
 /* Factoring: consentimiento en el formulario del hero (el formulario móvil centra su texto) */
 .form-financia .contacto-consentimiento {
   text-align: left;
+}
+/* Factoring: errores de validación del formulario del hero (mismo aspecto que en Hazte cliente) */
+.form-financia .form-control[aria-invalid="true"],
+.form-financia .form-check-input[aria-invalid="true"] {
+  border-color: #D93025;
+}
+.lead-form__error {
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 0.8rem;
+  color: #D93025;
+  text-align: left;
+  margin: 0.4rem 0 0;
+}
+.lead-form__error:empty {
+  display: none;
 }
 /* Factoring: beneficios de operar con Financia Capital (lista vertical con ícono en círculo) */
 .beneficios {
